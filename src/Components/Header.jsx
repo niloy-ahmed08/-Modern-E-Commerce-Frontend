@@ -1,10 +1,30 @@
 import React from 'react'
 
+
 const Header = () => {
   return (
-    <div className='bg-linear-to-bl from-gray-500 to-blue-200   py-56'>
+    <div className='bg-black py-3 '>
 
-<h1 className='text-5xl text-center'>Header Part Router-Layout</h1>
+      <div className='container'>
+
+        <div className=' flex justify-between text-white'>
+          <div></div>
+          <p className='text-sm '>Summer Sale For All Swim Suits And Free Express
+             Delivery - OFF 50%! <span className='border-b-2 pl-3  '>ShopNow</span> </p>
+           
+           <select className='bg-black te'>
+  <option value="volvo">English</option>
+  <option value="saab">Spanish</option>
+  <option value="mercedes" >Portugish</option>
+  <option value="audi">Arabic</option>
+    <option value="mercedes">Portugish</option>
+  <option value="audi">Arabic</option>
+</select>
+           
+
+        </div>
+
+      </div>
       
     </div>
   )

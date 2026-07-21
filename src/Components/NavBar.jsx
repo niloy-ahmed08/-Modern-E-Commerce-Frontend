@@ -1,10 +1,42 @@
 import React from 'react'
+import { IoIosSearch } from "react-icons/io";
+import { FaRegHeart } from "react-icons/fa6";
+import navlogo from '../assets/navlogo.png'
+import { CiShoppingCart } from "react-icons/ci";
 
 const NavBar = () => {
   return (
-    <div className='bg-blue-500 py-60 '>
+    <div className=' border-b'>
       
-<h1 className='text-5xl text-center'>NavBar Part Router-Layout</h1>
+      <div className='container mx-auto'>
+       
+       <div className='text-black flex justify-between py-7'>
+        <div>
+          <img src={navlogo} alt="" />
+        </div>
+
+           <ul className='text-black flex gap-12 items-center'>
+            <li>Home</li>
+            <li>Contact</li>
+            <li>About</li>
+            <li>Sign Up</li>
+           </ul>
+           <div className='flex justify-between items-center gap-7.5 cursor-pointer'>
+            <div className=' relative pl-5 py-1.5 pr-3 bg-[#828282]'>
+           <input type="text" className='pr-17.5 cursor-pointer ' placeholder='What are you looking for? ' />
+             <IoIosSearch className=' absolute top-1 right-3 text-[30px]'/>
+             
+            </div>
+
+            <div className='flex gap-4 '>
+              <FaRegHeart className='text-[30px]' />
+              <CiShoppingCart className='text-[30px]'/>
+            </div>
+           </div>
+       </div>
+
+      </div>
+
     </div>
   )
 }
