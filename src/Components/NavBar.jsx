@@ -1,7 +1,7 @@
 import React from 'react'
 import { IoIosSearch } from "react-icons/io";
 import { FaRegHeart } from "react-icons/fa6";
-import navlogo from '../assets/navlogo.png'
+import navlogos from '../assets/Navlogo.png'
 import { CiShoppingCart } from "react-icons/ci";
 
 const NavBar = () => {
@@ -12,7 +12,7 @@ const NavBar = () => {
        
        <div className='text-black flex justify-between py-7'>
         <div>
-          <img src={navlogo} alt="" />
+          <img src={navlogos} alt="" />
         </div>
 
            <ul className='text-black flex gap-12 items-center'>
