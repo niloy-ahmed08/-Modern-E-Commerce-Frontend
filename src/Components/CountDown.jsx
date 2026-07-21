@@ -19,7 +19,7 @@ const CountDown = () => {
 
 
     return (
-        <div className='py-20'>
+        <div className='pb-10'>
             <div className="container mx-auto">
 
                 <div className='flex gap-2 items-center'>

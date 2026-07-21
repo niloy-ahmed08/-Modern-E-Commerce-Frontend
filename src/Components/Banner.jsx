@@ -29,15 +29,15 @@ const Banner = () => {
                 <div className='w-[20%] border-r pr-5'>
 
                     <ul className='py-10 space-y-4'>
-                        <li className='flex  justify-between items-center'>Woman’s Fashion <FaArrowRightFromBracket /> </li>
-                        <li className='flex  justify-between  items-center'>Men’s Fashion <FaArrowRightFromBracket /> </li>
-                        <li className='flex  justify-between  items-center'>Electronics<FaArrowRightFromBracket /></li>
-                        <li className='flex  justify-between   items-center'>Home & Lifestyle<FaArrowRightFromBracket /></li>
-                        <li className='flex  justify-between  items-center'>Medicine<FaArrowRightFromBracket /></li>
-                        <li className='flex  justify-between  items-center'>Sports & Outdoor<FaArrowRightFromBracket /></li>
-                        <li className='flex  justify-between  items-center'>Baby’s & Toys<FaArrowRightFromBracket /></li>
-                        <li className='flex  justify-between  items-center'>Groceries & Pets<FaArrowRightFromBracket /></li>
-                        <li className='flex  justify-between  items-center'>Health & Beauty<FaArrowRightFromBracket /></li>
+                        <li className='flex  justify-between items-center'>Woman’s Fashion <FaArrowRightFromBracket className='cursor-pointer'/> </li>
+                        <li className='flex  justify-between  items-center'>Men’s Fashion <FaArrowRightFromBracket className='cursor-pointer' /> </li>
+                        <li className='flex  justify-between  items-center'>Electronics<FaArrowRightFromBracket className='cursor-pointer'/></li>
+                        <li className='flex  justify-between   items-center'>Home & Lifestyle<FaArrowRightFromBracket className='cursor-pointer'/></li>
+                        <li className='flex  justify-between  items-center'>Medicine<FaArrowRightFromBracket className='cursor-pointer'/></li>
+                        <li className='flex  justify-between  items-center'>Sports & Outdoor<FaArrowRightFromBracket className='cursor-pointer' /></li>
+                        <li className='flex  justify-between  items-center'>Baby’s & Toys<FaArrowRightFromBracket className='cursor-pointer' /></li>
+                        <li className='flex  justify-between  items-center'>Groceries & Pets<FaArrowRightFromBracket className='cursor-pointer' /></li>
+                        <li className='flex  justify-between  items-center'>Health & Beauty<FaArrowRightFromBracket className='cursor-pointer' /></li>
                     </ul>
 
                 </div>

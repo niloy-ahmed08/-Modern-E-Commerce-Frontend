@@ -16,21 +16,21 @@ const Footer = () => {
         <div className='flex  text-white justify-between'>
 
           <div>
-            <h1 className=''>Exclusive</h1>
-            <div className='mt-6 space-y-4'>
+            <h1 className='text-[20px]'>Exclusive</h1>
+            <div className='mt-6 space-y-4 text-[16px]'>
               <h3>Get 10% off your first order</h3>
               <h2>Subscribe</h2>
               <div className='py-3 w-54.25 pl-2 border border-white mt-4 relative'>
                 <input type="text" className='w-30 pl-1' placeholder='enter your email' />
-                <SiMinutemailer className=' absolute top-4 left-42' />
+                <SiMinutemailer className=' absolute top-4 left-42 text-2xl' />
               </div>
             </div>
           </div>
 
 
           <div>
-            <h1>Support</h1>
-            <ul className=' space-y-4 mt-6'>
+            <h1 className='text-[20px]'>Support</h1>
+            <ul className=' space-y-4 mt-6 text-[16px]'>
               <li>111 Bijoy sarani, Dhaka,
                 <span className='block'>
                   DH 1515, Bangladesh.
@@ -43,8 +43,8 @@ const Footer = () => {
           </div>
 
           <div>
-            <h1>Account</h1>
-            <ul className='space-y-4 mt-6'>
+            <h1 className='text-[20px]'>Account</h1>
+            <ul className='space-y-4 mt-6 text-[16px]'>
               <li>My Account</li>
               <li>Login / Register</li>
               <li>Cart</li>
@@ -55,8 +55,8 @@ const Footer = () => {
           </div>
 
           <div>
-            <h1>Quick Link</h1>
-            <ul className='space-y-4 mt-6'>
+            <h1 className='text-[20px]'>Quick Link</h1>
+            <ul className='space-y-4 mt-6 text-[16px]'>
               <li>Privacy Policy</li>
               <li>Terms Of Use</li>
               <li>FAQ</li>
@@ -65,8 +65,8 @@ const Footer = () => {
           </div>
 
           <div>
-            <h1>Download App</h1>
-            <div className='mt-6'>
+            <h1 className='text-[20px]'>Download App</h1>
+            <div className='mt-6 text-[16px]'>
               <h1>Save $3 with App New User Only</h1>
               <div className='flex gap-4 mt-4'>
                 <div>

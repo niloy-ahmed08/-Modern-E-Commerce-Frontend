@@ -15,11 +15,11 @@ const NavBar = () => {
           <img src={navlogos} alt="" />
         </div>
 
-           <ul className='text-black flex gap-12 items-center'>
-            <li>Home</li>
-            <li>Contact</li>
-            <li>About</li>
-            <li>Sign Up</li>
+           <ul className='text-black flex gap-12 items-center '>
+            <li className='cursor-pointer'>Home</li>
+            <li className='cursor-pointer'>Contact</li>
+            <li className='cursor-pointer'>About</li>
+            <li className='cursor-pointer'>Sign Up</li>
            </ul>
            <div className='flex justify-between items-center gap-7.5 cursor-pointer'>
             <div className=' relative pl-5 py-1.5 pr-3 bg-[#828282]'>
