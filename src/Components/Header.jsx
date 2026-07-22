@@ -12,7 +12,7 @@ const Header = () => {
           <p className='text-sm '>Summer Sale For All Swim Suits And Free Express
              Delivery - OFF 50%! <span className='border-b-2 pl-3  '>ShopNow</span> </p>
            
-           <select className='bg-black te'>
+           <select className='bg-black coursor-pointer'>
   <option value="volvo">English</option>
   <option value="saab">Spanish</option>
   <option value="mercedes" >Portugish</option>
