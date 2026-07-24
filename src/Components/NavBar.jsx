@@ -22,7 +22,7 @@ const NavBar = () => {
             <li className='cursor-pointer'>Sign Up</li>
            </ul>
            <div className='flex justify-between items-center gap-7.5 cursor-pointer'>
-            <div className=' relative pl-5 py-1.5 pr-3 bg-[#828282]'>
+            <div className=' relative pl-5 py-1.5 pr-3 bg-[#82828218]'>
            <input type="text" className='pr-17.5 cursor-pointer ' placeholder='What are you looking for? ' />
              <IoIosSearch className=' absolute top-1 right-3 text-[30px]'/>
              
