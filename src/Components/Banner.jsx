@@ -6,7 +6,6 @@ import imgtwob from '../assets/samsunghmain.png'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import SlickSlider from "react-slick";
-
 const Slider = SlickSlider.default || SlickSlider;
 
 const Banner = () => {
@@ -18,6 +17,21 @@ const Banner = () => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+       appendDots: dots => (
+      <div
+    
+      >
+        <ul style={{ margin: "0px" }}> {dots} </ul>
+      </div>
+    ),
+    customPaging: i => (
+      <div
+     className='w-3.5 h-3.5 bg-gray-400 rounded-full absolute bottom-8 translate-x-8 border-2 border-amber-50'
+      >
+        {}
+      </div>
+    )
+  
   };
     
     return (
@@ -31,13 +45,13 @@ const Banner = () => {
                     <ul className='py-20 space-y-4'>
                         <li className='flex  justify-between items-center'>Woman’s Fashion <FaArrowRightFromBracket className='cursor-pointer'/> </li>
                         <li className='flex  justify-between  items-center'>Men’s Fashion <FaArrowRightFromBracket className='cursor-pointer' /> </li>
-                        <li className='flex  justify-between  items-center'>Electronics<FaArrowRightFromBracket className='cursor-pointer'/></li>
-                        <li className='flex  justify-between   items-center'>Home & Lifestyle<FaArrowRightFromBracket className='cursor-pointer'/></li>
-                        <li className='flex  justify-between  items-center'>Medicine<FaArrowRightFromBracket className='cursor-pointer'/></li>
-                        <li className='flex  justify-between  items-center'>Sports & Outdoor<FaArrowRightFromBracket className='cursor-pointer' /></li>
-                        <li className='flex  justify-between  items-center'>Baby’s & Toys<FaArrowRightFromBracket className='cursor-pointer' /></li>
-                        <li className='flex  justify-between  items-center'>Groceries & Pets<FaArrowRightFromBracket className='cursor-pointer' /></li>
-                        <li className='flex  justify-between  items-center'>Health & Beauty<FaArrowRightFromBracket className='cursor-pointer' /></li>
+                        <li className='flex  justify-between  items-center'>Electronics</li>
+                        <li className='flex  justify-between   items-center'>Home & Lifestyle</li>
+                        <li className='flex  justify-between  items-center'>Medicine</li>
+                        <li className='flex  justify-between  items-center'>Sports & Outdoor</li>
+                        <li className='flex  justify-between  items-center'>Baby’s & Toys</li>
+                        <li className='flex  justify-between  items-center'>Groceries & Pets</li>
+                        <li className='flex  justify-between  items-center'>Health & Beauty</li>
                     </ul>
 
                 </div>

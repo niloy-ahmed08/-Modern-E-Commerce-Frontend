@@ -1,9 +1,9 @@
-import React, { Children } from 'react'
+import React from 'react'
 
-const Container = ({ Children }) => {
+const Container = ({ children }) => {
   return (
     <div className="container">
-      {Children}
+      {children}
     </div>
   )
 }
