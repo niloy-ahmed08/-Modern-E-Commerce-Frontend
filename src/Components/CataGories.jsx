@@ -1,67 +1,151 @@
 import React from 'react'
 import Container from './Container'
 import SecHead from './SecHead'
-import { SlScreenSmartphone } from "react-icons/sl";
-import { GiPc } from "react-icons/gi";
-import { BsSmartwatch } from "react-icons/bs";
+import ElectroNics from './ElectroNics';
+import { IoGameController } from "react-icons/io5";
+import { FaCameraRetro } from "react-icons/fa";
 import { LuHeadset } from "react-icons/lu";
-import { FaCamera } from "react-icons/fa";
+import { RiComputerLine } from "react-icons/ri";
+import { BsSmartwatch } from "react-icons/bs";
+import { SlScreenSmartphone } from "react-icons/sl";
+
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import SlickSlider from "react-slick";
+const Slider = SlickSlider.default || SlickSlider;
+import { FaArrowRightLong } from "react-icons/fa6";
+import { FaArrowLeftLong } from "react-icons/fa6";
+
+
+
 
 
 
 const CataGories = () => {
+
+
+
+
+
+  function SampleNextArrow(props) {
+    const { className, style, onClick } = props;
+    return (
+      <div
+        className=' cursor-pointer absolute h-11.5 w-11.5 rounded-full bg-[#F5F5F5] flex items-center justify-center absolute -top-10 right-15 '
+        // style={{ ...style, display: "block", background: "red" }}
+        onClick={onClick}
+      >
+        <FaArrowRightLong className=' ' />
+      </div>
+
+    );
+  }
+
+  function SamplePrevArrow(props) {
+    const { className, style, onClick } = props;
+    return (
+      <div
+        className='cursor-pointer absolute h-11.5 w-11.5 rounded-full flex items-center justify-center bg-[#F5F5F5]  -top-10 right-31'
+        onClick={onClick}
+      >
+        <FaArrowLeftLong className=' ' />
+
+      </div>
+    );
+  }
+
+
+  var settings = {
+
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 5,
+    slidesToScroll: 3,
+    arrows: true,
+
+    nextArrow: <SampleNextArrow />,
+    prevArrow: <SamplePrevArrow />
+  };
+
+
   return (
     <div className='py-30'>
       <Container>
-          <SecHead/>
-          
-            <h1 className='text-3xl text-black mt-5'>Browse By Category</h1>
-         <div className=' flex items-center gap-6'>
-                 <div className=' hover:bg-primary border border-gray-300 h-42.5 mt-15 w-42.5 pt-[32px] pr-8 pl-8'>
-                        <SlScreenSmartphone className='text-5xl block mx-auto'/>
-                        <h1 className='text-sm font-normal block text-center mt-5'>Phone</h1>
+
+        <SecHead
+
+          headtitles='Categories'
+          headtitletexttwo='Browse By Category'
+        />
+
+
+
+
+
+
+
+        <div className=' border-b pb-25 mt-10'>
+
+
+          <Slider {...settings}>
+            <div className=' '>
+              <ElectroNics
+                children={<IoGameController className='text-3xl block mx-auto' />}
+                titleelectric='Game'
+              />
             </div>
 
-
-             
-                 <div className='hover:bg-primary border border-gray-300 h-42.5 mt-15 w-42.5 pt-[32px] pr-8 pl-8'>
-                        <GiPc className='text-5xl block mx-auto' />
-                        <h1 className='text-sm font-normal block text-center mt-5'>Phone</h1>
+            <div className=''>
+              <ElectroNics
+                children={<FaCameraRetro className='text-3xl block mx-auto' />
+                }
+                titleelectric='Phone'
+              />
+            </div>
+            <div className=''>
+              <ElectroNics
+                children={<LuHeadset className='text-3xl block mx-auto' />
+                }
+                titleelectric='Headset'
+              />
+            </div>
+            <div className=''>
+              <ElectroNics
+                children={<RiComputerLine className='text-3xl block mx-auto' />}
+                titleelectric='Decstop'
+              />
             </div>
 
-
-
-            
-                 <div className='hover:bg-primary border border-gray-300 h-42.5 mt-15 w-42.5 pt-[32px] pr-8 pl-8'>
-                        <BsSmartwatch className='text-5xl block mx-auto'/>
-                        <h1 className='text-sm font-normal block text-center mt-5'>Phone</h1>
-            </div>
-                
-                
-
-                
-
-            
-                 <div className='hover:bg-primary border border-gray-300 h-42.5 mt-15 w-42.5 pt-[32px] pr-8 pl-8'>
-                        <FaCamera className='text-5xl block mx-auto' />
-                        <h1 className='text-sm font-normal block text-center mt-5'>Phone</h1>
+            <div className=''>
+              <ElectroNics
+                children={<BsSmartwatch className='text-3xl block mx-auto' />
+                }
+                titleelectric='Smartwatch'
+              />
             </div>
 
-
-
-
-            
-                 <div className='hover:bg-primary border border-gray-300 h-42.5 mt-15 w-42.5 pt-[32px] pr-8 pl-8'>
-                        <LuHeadset className='text-5xl block mx-auto' />
-                        <h1 className='text-sm font-normal block text-center mt-5'>Phone</h1>
+            <div className=''>
+              <ElectroNics
+                children={<SlScreenSmartphone className='text-3xl block mx-auto' />}
+                titleelectric='Phone'
+              />
             </div>
-                     
-                 <div className='hover:bg-primary transform transition ease-linear border border-gray-300 h-42.5 mt-15 w-42.5 pt-[32px] pr-8 pl-8'>
-                        <LuHeadset className='text-5xl block mx-auto' />
-                        <h1 className='text-sm font-normal block text-center mt-5'>Phone</h1>
-            </div>
-         </div>
-        
+          </Slider>
+
+
+
+
+        </div>
+
+
+
+
+
+
+
+
+
       </Container>
     </div>
   )

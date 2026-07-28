@@ -73,13 +73,13 @@ const Banner = () => {
 
                     <button
                         onClick={() => sliderRef.current?.slickPrev()}
-                        className='absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-white/80 text-black rounded-full w-10 h-10 flex items-center justify-center shadow-md hover:bg-white'
+                        className=' cursor-pointer absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-white/80 text-black rounded-full w-10 h-10 flex items-center justify-center shadow-md hover:bg-white'
                     >
                         ❮
                     </button>
                     <button
                         onClick={() => sliderRef.current?.slickNext()}
-                        className='absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-white/80 text-black rounded-full w-10 h-10 flex items-center justify-center shadow-md hover:bg-white'
+                        className=' cursor-pointer absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-white/80 text-black rounded-full w-10 h-10 flex items-center justify-center shadow-md hover:bg-white'
                     >
                         ❯
                     </button>
