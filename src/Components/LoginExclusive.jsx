@@ -35,7 +35,7 @@ const LoginExclusive = () => {
   const emailvalidregexnotify = ()=>{
     toast.warn('enter valid email or number BD', {
 position: "top-right",
-autoClose: 5000,
+autoClose: 1000,
 hideProgressBar: false,
 closeOnClick: false,
 pauseOnHover: true,
@@ -51,7 +51,7 @@ transition: Bounce,
     const passwordvalidregexnotify = ()=>{
     toast.warn('enter password charctor upper lower ,special,and number 8 long', {
 position: "top-right",
-autoClose: 5000,
+autoClose: 1000,
 hideProgressBar: false,
 closeOnClick: false,
 pauseOnHover: true,
@@ -82,7 +82,7 @@ transition: Bounce,
   const Loginsuccesess = ()=>{
     toast.success('Your Login Succsessfully', {
 position: "top-center",
-autoClose: 5000,
+autoClose: 3000,
 hideProgressBar: false,
 closeOnClick: false,
 pauseOnHover: true,
@@ -141,7 +141,7 @@ transition: Bounce,
 
        navigate('/nabigate')
 
-     },2505)
+     },1005)
 
     setemail('')
     setpassword('')
@@ -179,23 +179,23 @@ transition: Bounce,
 
               <h1 className='text-2xl font-semibold text-black mt-[0px]'>Log in to Exclusive</h1>
               <p className='text-sm font-medium text-gray-400 mt-4'>Enter your details below</p>
-              <div className='border-b-2 py-2 mt-12 border-gray-400 '>
-                <input value={email} className=' border-none outline-none w-full' onFocus={() => setemailerror('')} onChange={(e) => setemail(e.target.value)} type="text" placeholder='Email or phone number' />
+              <div className='border-b-2 mt-12 border-gray-400 '>
+                <input value={email} className=' outline-none' onFocus={() => setemailerror('')} onChange={(e) => setemail(e.target.value)} type="text" placeholder='Email or phone number' />
                 <p className='text-sm font-medium text-primary'> {emailerror} </p>
               </div>
 
-              <div className='border-b-2 py-2 mt-10 mb-10 relative border-gray-400'>
-                <input className=' outline-none w-full' value={password} onFocus={() => setpassworderror('')} onChange={(e) => setpassword(e.target.value)} type={eyeshow? 'text' : 'password'}   placeholder='Password' />
+              <div className='border-b-2  mt-10 mb-10 relative border-gray-400'>
+                <input className=' outline-none ' value={password} onFocus={() => setpassworderror('')} onChange={(e) => setpassword(e.target.value)} type={eyeshow? 'text' : 'password'}   placeholder='Password' />
                    { eyeshow ?
-                <IoMdEye onClick={()=>seteyeshow(!eyeshow)} className=' absolute text-2xl  top-2 -right-5' />
+                <IoMdEye onClick={()=>seteyeshow(!eyeshow)} className=' absolute text-2xl  top-0 -right-2' />
                 :
-                <IoEyeOffSharp onClick={()=>seteyeshow(!eyeshow)} className=' absolute text-2xl   top-2 -right-5'  />
+                <IoEyeOffSharp onClick={()=>seteyeshow(!eyeshow)} className=' absolute text-2xl   top-0 -right-1'  />
                    }
                 
                 <p className='text-sm font-medium text-primary'> {passworderror} </p>
               </div>
             
-              <button onClick={Loginhandaleclick} className='bg-primary text-white py-4 px-12 rounded-sm'>Login</button>
+              <button onClick={Loginhandaleclick} className='cursor-pointer bg-primary text-white py-4 px-12 rounded-sm'>Login</button>
             </div>
 
           </div>

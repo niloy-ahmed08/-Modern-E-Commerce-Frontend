@@ -3,6 +3,8 @@ import { IoIosSearch } from "react-icons/io";
 import { FaRegHeart } from "react-icons/fa6";
 import navlogos from '../assets/Navlogo.png'
 import { CiShoppingCart } from "react-icons/ci";
+import { NavLink } from "react-router";
+
 
 const NavBar = () => {
   return (
@@ -18,8 +20,16 @@ const NavBar = () => {
            <ul className='text-black flex gap-12 items-center '>
             <li className='cursor-pointer'>Home</li>
             <li className='cursor-pointer'>Contact</li>
-            <li className='cursor-pointer'>About</li>
-            <li className='cursor-pointer'>Sign Up</li>
+            <li className='cursor-pointer'>
+                      <NavLink to="/navitgateabout" end>
+         About
+      </NavLink>
+            </li>
+            <li className='cursor-pointer'>
+               <NavLink to="/signuppart" end>
+         Sign Up
+      </NavLink>
+            </li>
            </ul>
            <div className='flex justify-between items-center gap-7.5 cursor-pointer'>
             <div className=' relative pl-5 py-1.5 pr-3 bg-[#82828218]'>

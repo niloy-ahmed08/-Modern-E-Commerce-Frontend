@@ -1,6 +1,6 @@
 
 import  Container  from './Container'
-import React from 'react'
+import React, { useState } from 'react'
 import remotes from '../assets/Remotecontrols.png'
 import chaiars from '../assets/chaiar.png'
 import CustmPcard from './CustmPcard'
@@ -13,10 +13,16 @@ import SlickSlider from "react-slick";
 const Slider = SlickSlider.default || SlickSlider;
 import { FaArrowRightLong } from "react-icons/fa6";
 import { FaArrowLeftLong } from "react-icons/fa6";
+import baghslady from '../assets/Bagh.png'
+import tables from '../assets/table.png'
+import jbl from '../assets/soundbox.png'
+import jscket from '../assets/Jacket.png'
 
 
 const ProductCard = () => {
 
+
+          const[viewall,setviewall]=useState(false)
 
   
     function SampleNextArrow(props) {
@@ -59,6 +65,8 @@ const ProductCard = () => {
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />
          };
+
+
   
 
 
@@ -135,9 +143,196 @@ const ProductCard = () => {
                </div>
                  </Slider>
 
+               {
+                viewall ? 
+                <div className='mt-15  grid grid-cols-4 gap-7.5 '>
+
+           <div className=''>
+            <CustmPcard
+            
+            imgsrc={chaiars}
+            produtname='The north coat'
+            price='230'
+            discauntprice='330'
+            
+            />
+           </div>
+
+
+
+                  <div className=''>
+            <CustmPcard
+            
+            imgsrc={keyboards}
+            produtname='The north coat'
+            price='230'
+            discauntprice='330'
+            
+            />
+           </div>
+
+
+
+
+
+                  <div className=''>
+            <CustmPcard
+            
+            imgsrc={tables}
+            produtname='The north coat'
+            price='230'
+            discauntprice='330'
+            
+            />
+           </div>
+
+
+
+
+                  <div className=''>
+            <CustmPcard
+            
+            imgsrc={jbl}
+            produtname='The north coat'
+            price='230'
+            discauntprice='330'
+            
+            />
+           </div>
+
+
+
+             <div className=''>
+            <CustmPcard
+            
+            imgsrc={remotes}
+            produtname='The north coat'
+            price='230'
+            discauntprice='330'
+            
+            />
+           </div>
+
+
+
+                  <div className=''>
+            <CustmPcard
+            
+            imgsrc={ledsmonitor}
+            produtname='The north coat'
+            price='230'
+            discauntprice='330'
+            
+            />
+           </div>
+
+
+
+
+
+                  <div className=''>
+            <CustmPcard
+            
+            imgsrc={baghslady}
+            produtname='The north coat'
+            price='230'
+            discauntprice='330'
+            
+            />
+           </div>
+
+
+
+
+                  <div className=''>
+            <CustmPcard
+            
+            imgsrc={chaiars}
+            produtname='The north coat'
+            price='230'
+            discauntprice='330'
+            
+            />
+           </div>
+
+           
+
+
+
+  <div className=''>
+            <CustmPcard
+            
+            imgsrc={jbl}
+            produtname='The north coat'
+            price='230'
+            discauntprice='330'
+            
+            />
+           </div>
+
+
+
+                  <div className=''>
+            <CustmPcard
+            
+            imgsrc={jscket}
+            produtname='The north coat'
+            price='230'
+            discauntprice='330'
+            
+            />
+           </div>
+
+
+
+
+
+                  <div className=''>
+            <CustmPcard
+            
+            imgsrc={remotes}
+            produtname='The north coat'
+            price='230'
+            discauntprice='330'
+            
+            />
+           </div>
+
+
+
+
+                  <div className=''>
+            <CustmPcard
+            
+            imgsrc={ledsmonitor}
+            produtname='The north coat'
+            price='230'
+            discauntprice='330'
+            
+            />
+           </div>
+
+           
+
+
+           
+
+
+             </div>
+
+
+
+
+
+                :null
+               }
 
            </div>
-              <button className=' py-4 px-12 justify-center bg-primary text-white  text-2xl block mx-auto mt-15'>View All Products</button>
+           {viewall ? null :
+              <button onClick={()=>setviewall(true)} className=' cursor-pointer py-4 px-12 justify-center bg-primary text-white  text-2xl block mx-auto mt-15'>View All Products</button>
+           }
+               
+               
                <div className='border-b border-gray-700 mt-10'>
             </div>
                  

@@ -9,6 +9,7 @@ import SounBox from '../Components/SounBox'
 import ExploreProducts from '../Components/ExploreProducts'
 import NewArival from '../Components/NewArival'
 import LoginExclusive from '../Components/LoginExclusive'
+import SingUp from '../Components/SingUp'
 
 const Home = () => {
   return (
@@ -22,6 +23,7 @@ const Home = () => {
           <ExploreProducts/>
           <NewArival/>
           <LoginExclusive/>
+          <SingUp/>
       
     </div>
   )
