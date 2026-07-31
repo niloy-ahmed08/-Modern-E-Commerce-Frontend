@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router'
 
 
 const Header = () => {
@@ -10,7 +11,13 @@ const Header = () => {
         <div className=' flex justify-between text-white'>
           <div></div>
           <p className='text-sm '>Summer Sale For All Swim Suits And Free Express
-             Delivery - OFF 50%! <span className='border-b-2 ml-3  '>ShopNow</span> </p>
+             Delivery - OFF 50%! <span className='border-b-2 ml-3  '>
+              
+          <NavLink to="/navitgateshopNow" end>
+         ShopNow
+      </NavLink>
+              
+              </span> </p>
            
            <select className='bg-black text-white cursor-pointer'>
   <option value="volvo">English</option>

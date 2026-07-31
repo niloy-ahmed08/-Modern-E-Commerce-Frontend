@@ -17,6 +17,9 @@ export const router = createBrowserRouter([
       { path: "navitgateignup", Component: LoginExclusive },
        { path: "signuppart", Component: SingUp },
         { path: "navitgateabout", Component: SellinghProducts },
+         { path: "navitgatehome", Component: Home },
+            { path: "navigatecontect", Component: LoginExclusive },
+              { path: "navitgateshopNow", Component: SellinghProducts },
       
     ],
   },

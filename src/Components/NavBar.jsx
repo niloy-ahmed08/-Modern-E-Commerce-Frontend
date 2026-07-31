@@ -17,9 +17,19 @@ const NavBar = () => {
           <img src={navlogos} alt="" />
         </div>
 
-           <ul className='text-black flex gap-12 items-center '>
-            <li className='cursor-pointer'>Home</li>
-            <li className='cursor-pointer'>Contact</li>
+           <ul className='text-black flex gap-12 items-center text-[16px] font-normal '>
+            <li className='cursor-pointer'>
+
+          <NavLink to="/navitgatehome" end>
+        Home
+      </NavLink>
+            </li>
+            <li className='cursor-pointer'>
+
+          <NavLink to="/navigatecontect" end>
+         Contect
+      </NavLink>
+            </li>
             <li className='cursor-pointer'>
                       <NavLink to="/navitgateabout" end>
          About
