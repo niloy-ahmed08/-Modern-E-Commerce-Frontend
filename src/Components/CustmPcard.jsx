@@ -10,7 +10,7 @@ const CustmPcard = ({ parsents, imgsrc, produtname, ratemathmathics, price, disc
             <div className='w-67.5  group'>
 
                 <div className=' relative bg-[#F5F5F5] pt-11 pl-0  overflow-hidden h-62.5'>
-                    <span className=' absolute top-3 left-3   py-2 px-3 text-xs  rounded-sm bg-primary text-white'>-{parsents}%gi</span>
+                    <span className=' absolute top-3 left-3   py-2 px-3 text-xs  rounded-sm bg-primary text-white'>-{parsents}%</span>
                     <img src={imgsrc} alt="" className=' mx-auto ' />
                     <div className=' absolute top-3 right-3  space-y-2'>
                         <div className='  bg-white w-8.5 h-8.5 rounded-full flex items-center justify-center'>
