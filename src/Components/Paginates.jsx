@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import CustmPcard from './CustmPcard';
 
-const Paginates = ({ itemsPerPage , products = [] }) => {
+const Paginates = ({ itemsPerPage = 6, products = [] }) => {
   const [currentPage, setCurrentPage] = useState(0);
 
   const safeProducts = Array.isArray(products) ? products : [];
