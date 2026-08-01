@@ -6,6 +6,8 @@ import CataGories from "./Components/CataGories";
 import LoginExclusive from "./Components/LoginExclusive";
 import SingUp from "./Components/SingUp";
 import SellinghProducts from "./Components/SellinghProducts";
+import Shop from "./pages/Shop";
+import Contact from "./pages/Contact";
 
 export const router = createBrowserRouter([
  {
@@ -19,7 +21,10 @@ export const router = createBrowserRouter([
         { path: "navitgateabout", Component: SellinghProducts },
          { path: "navitgatehome", Component: Home },
             { path: "navigatecontect", Component: LoginExclusive },
-              { path: "navitgateshopNow", Component: SellinghProducts },
+              { path: "navitgateshopNow", Component: Shop },
+               { path: "shop", Component: Shop },
+                { path: "contact", Component: Contact },
+
       
     ],
   },
