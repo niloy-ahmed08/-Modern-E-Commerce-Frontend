@@ -5,9 +5,10 @@ const Skilietoon = () => {
   return (
     <>
 
-    <div class="relative flex flex-col mt-6 text-gray-700 bg-white shadow-md bg-clip-border rounded-xl w-68 animate-pulse">
+   
+ <div class="relative flex flex-col mt-6 text-gray-700 bg-white shadow-md bg-clip-border rounded-xl w-68 animate-pulse">
   <div
-    class="relative grid h-56  my-4 overflow-hidden text-gray-700 bg-gray-300 bg-clip-border rounded-xl place-items-center">
+    class="relative grid h-56 mx-4 mt-4 overflow-hidden text-gray-700 bg-gray-300 bg-clip-border rounded-xl place-items-center">
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
       class="w-12 h-12 text-gray-500">
       <path stroke-linecap="round" stroke-linejoin="round"
@@ -17,7 +18,7 @@ const Skilietoon = () => {
   </div>
   <div class="p-6">
     <div
-      class="block w-20 h-3 mb-4 font-sans text-5xl antialiased font-semibold leading-tight tracking-normal bg-gray-300 rounded-full text-inherit">
+      class="block w-56 h-3 py-4 font-sans text-5xl antialiased font-semibold leading-tight tracking-normal bg-gray-300 rounded-full text-inherit">
       &nbsp;
     </div>
     <div
@@ -29,19 +30,19 @@ const Skilietoon = () => {
       &nbsp;
     </div>
     <div
-      class="block w-full h-2 mb-1 font-sans text-base antialiased font-light leading-relaxed bg-gray-300 rounded-full text-inherit">
+      class="block w-full h-2 mb-2 font-sans text-base antialiased font-light leading-relaxed bg-gray-300 rounded-full text-inherit">
       &nbsp;
     </div>
     <div
-      class="block w-full h-2  font-sans text-base antialiased font-light leading-relaxed bg-gray-300 rounded-full text-inherit">
+      class="block w-full h-2 mb-2 font-sans text-base antialiased font-light leading-relaxed bg-gray-300 rounded-full text-inherit">
       &nbsp;
     </div>
   </div>
-  <div class=" pl-4 ">
-   
-  <Rate allowHalf defaultValue={2.5} />;
+  <div class="p-6 pt-0">
+   <Rate allowHalf defaultValue={2.5} />;
   </div>
 </div>
+
  
 
     </>

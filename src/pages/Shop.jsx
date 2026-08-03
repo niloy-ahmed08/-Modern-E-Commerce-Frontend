@@ -3,23 +3,43 @@ import Container from '../Components/Container'
 import { FaArrowRightFromBracket } from "react-icons/fa6";
 import CustmPcard from '../Components/CustmPcard';
 import Item from 'antd/es/list/Item';
+import ReactPaginateModule from 'react-paginate';
+import PaginaTion from '../Components/PaginaTion';
+import { Skeleton } from 'antd';
+import { useDispatch, useSelector } from 'react-redux';
+import { ProductReducer } from '../Slice/ProductSlice';
+const ReactPaginate = ReactPaginateModule?.default ?? ReactPaginateModule;
 
 const Shop = () => {
 
 
-    const [products, setproducts] = useState([])
+    // const [products, setproducts] = useState([])
+    const[show,setshow]=useState(6)
+    const[loading,setloading]=useState(true)
 
+      const DishPatch = useDispatch()
+        const products = useSelector(state => state.ProductStore.value) 
 
+           console.log(products)
+      
     useEffect(() => {
 
         fetch('https://dummyjson.com/products')
             .then(res => res.json())
-            .then((data) => setproducts(data.products));
+            .then((data) => DishPatch(ProductReducer(data.products)))
+            // .then((data) => setproducts(data.products))
+            .then((data)=>(setloading(false)))
 
     }, [])
 
   
+      
+    const Unikcategory = [...new Set(products.map((items)=>items.category))]
 
+          const handalecategory =(unikitem)=>{
+            let unictagoryss = products.filter((itemss)=>itemss.category == unikitem)
+             DishPatch(ProductReducer(unictagoryss))
+          }
 
 
 
@@ -39,7 +59,7 @@ const Shop = () => {
                     <div className='flex gap-2 items-center'>
                         <h1 className='text-lg font-bold'>Show :</h1>
                         <div>
-                            <select className='border border-gray-300 py-1 px-8' name="" id="">
+                            <select onChange={(e)=>setshow(e.target.value)} className='border border-gray-300 py-1 px-8' name="" id="">
                                 <option value="6">6</option>
                                 <option value="9">9</option>
                                 <option value="12">12</option>
@@ -53,15 +73,14 @@ const Shop = () => {
                     <div className='w-[20%] pr-5  '>
 
                         <ul className='py-20 space-y-4'>
-                            <li className='flex  justify-between items-center'>Woman’s Fashion <FaArrowRightFromBracket className='cursor-pointer' /> </li>
-                            <li className='flex  justify-between  items-center'>Men’s Fashion <FaArrowRightFromBracket className='cursor-pointer' /> </li>
-                            <li className='flex  justify-between  items-center'>Electronics</li>
-                            <li className='flex  justify-between   items-center'>Home & Lifestyle</li>
-                            <li className='flex  justify-between  items-center'>Medicine</li>
-                            <li className='flex  justify-between  items-center'>Sports & Outdoor</li>
-                            <li className='flex  justify-between  items-center'>Baby’s & Toys</li>
-                            <li className='flex  justify-between  items-center'>Groceries & Pets</li>
-                            <li className='flex  justify-between  items-center'>Health & Beauty</li>
+                         
+
+                         {
+                            Unikcategory.map((unikitem)=>{
+                                 return <li onClick={()=>handalecategory(unikitem)} className=' uppercase font-bold'>{unikitem}</li>
+                            })
+                         }
+                        
 
                         </ul>
 
@@ -69,9 +88,9 @@ const Shop = () => {
 
                     <div className='w-[80%]'>
 
-                        <div className='flex flex-wrap justify-between gap-y-9.5 gap-x-5 mt-10'>
+                        <div className='flex flex-wrap justify-between gap-y-9.5 gap-x-5 mt-10 '>
 
-                             {
+                             {/* {
                             products.map((item)=>{
                                 return <CustmPcard
                                 
@@ -84,9 +103,26 @@ const Shop = () => {
                                 rating={item.rating}
                                 />
                             })
+                          }   */}
+                          
+
+                          {
+                            loading ? <>
+                               <Skeleton/>
+                                <Skeleton/>
+                                 <Skeleton/>
+                                 
+                            </>
+                            :
+                          <PaginaTion itemsPerPage={show} />
                           } 
 
+
+
+
                         </div>
+
+                        
 
                     </div>
 
