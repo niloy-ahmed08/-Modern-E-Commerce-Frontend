@@ -1,10 +1,10 @@
 import React from 'react'
-import BreadCumps from '../Components/BreadCumps'
+import BreadCump from './BreadCump'
 
 const Contact = () => {
   return (
     <div>
-        <BreadCumps/>
+        <BreadCump/>
       
     </div>
   )

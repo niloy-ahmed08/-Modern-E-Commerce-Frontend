@@ -12,6 +12,7 @@ import LoginExclusive from '../Components/LoginExclusive'
 import SingUp from '../Components/SingUp'
 import CustomerService from '../Components/CustomerService'
 import Shop from './Shop'
+ 
 
 const Home = () => {
   return (
