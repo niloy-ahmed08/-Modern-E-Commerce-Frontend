@@ -8,25 +8,27 @@ import SingUp from "./Components/SingUp";
 import SellinghProducts from "./Components/SellinghProducts";
 import Shop from "./pages/Shop";
 import Contact from "./Components/Contact";
+import Productdettels from "./pages/Productdettels";
 
 
 export const router = createBrowserRouter([
- {
+  {
     path: "/",
-    Component:Rootlayout,
+    Component: Rootlayout,
     children: [
-      { index: true, Component: Home},
+      { index: true, Component: Home },
       { path: "nabigate", Component: CataGories },
       { path: "navitgateignup", Component: LoginExclusive },
-       { path: "signuppart", Component: SingUp },
-        { path: "navitgateabout", Component: SellinghProducts },
-         { path: "navitgatehome", Component: Home },
-            { path: "navigatecontect", Component: LoginExclusive },
-              { path: "navitgateshopNow", Component: Shop },
-               { path: "shop", Component: Shop },
-                 { path: "contact", Component: Contact },
+      { path: "signuppart", Component: SingUp },
+      { path: "navitgateabout", Component: SellinghProducts },
+      { path: "navitgatehome", Component: Home },
+      { path: "navigatecontect", Component: LoginExclusive },
+      { path: "navitgateshopNow", Component: Shop },
+      { path: "shop", Component: Shop },
+      { path: "contact", Component: Contact },
+      { path: "productdettes/:id", Component: Productdettels },
 
-      
+
     ],
   },
 ]);

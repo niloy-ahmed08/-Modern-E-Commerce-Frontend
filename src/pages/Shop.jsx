@@ -8,41 +8,62 @@ import PaginaTion from '../Components/PaginaTion';
 import { Skeleton } from 'antd';
 import { useDispatch, useSelector } from 'react-redux';
 import { ProductReducer } from '../Slice/ProductSlice';
+import axios from 'axios';
+import { data } from 'react-router';
+
+
 const ReactPaginate = ReactPaginateModule?.default ?? ReactPaginateModule;
 
 const Shop = () => {
 
 
-    // const [products, setproducts] = useState([])
+    const [Products, setproducts] = useState([])
     const[show,setshow]=useState(6)
     const[loading,setloading]=useState(true)
 
-      const DishPatch = useDispatch()
-        const products = useSelector(state => state.ProductStore.value) 
-
-           console.log(products)
+        const DishPatch = useDispatch()
       
-    useEffect(() => {
+        const product = useSelector(state => state. storeskey.value)
 
-        fetch('https://dummyjson.com/products')
-            .then(res => res.json())
-            .then((data) => DishPatch(ProductReducer(data.products)))
-            // .then((data) => setproducts(data.products))
-            .then((data)=>(setloading(false)))
+         
 
-    }, [])
 
+    // useEffect(() => {
+
+    //     fetch('https://dummyjson.com/products?limit=100')
+    //         .then(res => res.json())
+    //         .then((data) => DishPatch(ProductReducer(data.products)))
+    //         // .then((data) => setproducts(data.products))
+    //         .then((data)=>(setloading(false)))
+
+    // }, [])
+
+
+              const AllProducts = async ()=>{
+
+                let datas = await axios.get('https://dummyjson.com/products?limit=100')
+
+               DishPatch(ProductReducer(datas.data.products))
+               setproducts(datas.data.products)
+                 setloading(false)
+
+              }
+
+             useEffect(()=>{
+                AllProducts()
+             },[])
+              
+            
   
-      
-    const Unikcategory = [...new Set(products.map((items)=>items.category))]
+            const unikcategoy = [...new Set(Products.map((item)=>item.category))]
 
-          const handalecategory =(unikitem)=>{
-            let unictagoryss = products.filter((itemss)=>itemss.category == unikitem)
-             DishPatch(ProductReducer(unictagoryss))
-          }
+       
+                 const handalecategory = (unikitems)=>{
 
-
-
+                    let unicategoriesmain = Products.filter((itemcategorymain)=>itemcategorymain.category == unikitems)
+                     DishPatch(ProductReducer(unicategoriesmain))
+                 }
+            
 
     return (
         <div className='py-25'>
@@ -73,14 +94,15 @@ const Shop = () => {
                     <div className='w-[20%] pr-5  '>
 
                         <ul className='py-20 space-y-4'>
-                         
 
-                         {
-                            Unikcategory.map((unikitem)=>{
-                                 return <li onClick={()=>handalecategory(unikitem)} className=' uppercase font-bold'>{unikitem}</li>
+                        <li onClick={()=>DishPatch(ProductReducer(Products))} className=' cursor-pointer text-sm font-semibold'>All Products</li>
+                         
+                          {
+                            unikcategoy.map((unikitems)=>{
+                               return <li className='cursor-pointer text-sm font-semibold mt-4' onClick={()=>handalecategory(unikitems)}>{unikitems}</li>
                             })
-                         }
-                        
+                         } 
+                          
 
                         </ul>
 
@@ -88,38 +110,22 @@ const Shop = () => {
 
                     <div className='w-[80%]'>
 
-                        <div className='flex flex-wrap justify-between gap-y-9.5 gap-x-5 mt-10 '>
-
-                             {/* {
-                            products.map((item)=>{
-                                return <CustmPcard
-                                
-                                imgsrc={item.thumbnail}
-                                produtname={item.title}
-                                price={item.price}
-                                parsents={item.discountPercentage}
-                                discauntprice={(item.price - (item.price * (item.discountPercentage / 100))).toFixed(2)}
-                                ratemathmathics={item.reviews.length}
-                                rating={item.rating}
-                                />
-                            })
-                          }   */}
-                          
-
+                        <div className=''>
                           {
                             loading ? <>
+                            <div className='flex flex-wrap  gap-y-10 gap-x-5 mt-10 '>
+
                                <Skeleton/>
                                 <Skeleton/>
                                  <Skeleton/>
+                                 <Skeleton/>
+                                 <Skeleton/>
+                            </div>
                                  
                             </>
                             :
-                          <PaginaTion itemsPerPage={show} />
+                          <PaginaTion itemsPerPage={show}  />
                           } 
-
-
-
-
                         </div>
 
                         

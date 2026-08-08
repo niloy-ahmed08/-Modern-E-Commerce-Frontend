@@ -5,35 +5,41 @@ import { useSelector } from 'react-redux';
 const ReactPaginate = ReactPaginateModule?.default ?? ReactPaginateModule;
 
 
-const PaginaTion = ({ itemsPerPage}) => {
+const PaginaTion = ({ itemsPerPage }) => {
 
-        const products = useSelector(state => state.ProductStore.value) 
+  const products = useSelector(state => state.storeskey.value)
 
-const items = products
 
-function Items({ currentItems }) {
-  return (
-    <>
-      {currentItems &&
-        currentItems.map((item) => (
-          <div>
-             <CustmPcard
-                                
-                                imgsrc={item.thumbnail}
-                                produtname={item.title}
-                                price={item.price}
-                                parsents={item.discountPercentage}
-                                discauntprice={(item.price - (item.price * (item.discountPercentage / 100))).toFixed(2)}
-                                ratemathmathics={item.reviews.length}
-                                rating={item.rating}
-                                />
-          </div>
-        ))}
-    </>
-  );
-}
+  const items = products
 
- const [itemOffset, setItemOffset] = useState(0);
+  function Items({ currentItems }) {
+    return (
+      <>
+        <div className='flex flex-wrap  gap-y-10 gap-x-5 mt-12 '>
+
+
+          {currentItems &&
+            currentItems.map((item) => (
+              <div>
+                <CustmPcard
+                  id={item.id}
+                  imgsrc={item.thumbnail}
+                  produtname={item.title}
+                  price={item.price}
+                  parsents={item.discountPercentage}
+                  discauntprice={(item.price - (item.price * (item.discountPercentage / 100))).toFixed(2)}
+                  ratemathmathics={item.reviews.length}
+                  rating={item.rating}
+                  
+                />
+              </div>
+            ))}
+        </div>
+      </>
+    );
+  }
+
+  const [itemOffset, setItemOffset] = useState(0);
 
   // Simulate fetching items from another resources.
   // (This could be items from props; or items loaded in a local state
@@ -55,9 +61,9 @@ function Items({ currentItems }) {
 
 
   return (
-    
 
- <>
+
+    <>
       <Items currentItems={currentItems} />
       <ReactPaginate
         breakLabel="..."
@@ -67,13 +73,14 @@ function Items({ currentItems }) {
         pageCount={pageCount}
         previousLabel=""
         renderOnZeroPageCount={null}
-        className='flex gap-10 items-center'
+        className='flex gap-10 items-center mt-10'
         pageClassName='bg-black px-3 py-1 text-white text-xs'
+        previousClassName='hidden'
       />
     </>
-      
-      
-  
+
+
+
   )
 }
 

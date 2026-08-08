@@ -3,7 +3,8 @@ import { ProductSlice } from './Slice/ProductSlice'
 
 export default configureStore({
   reducer: {
-
-    ProductStore : ProductSlice.reducer
+    storeskey : ProductSlice.reducer
+  
+   
   }
 })

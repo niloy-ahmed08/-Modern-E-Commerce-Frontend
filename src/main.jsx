@@ -11,8 +11,8 @@ import Store from './Store.js'
 createRoot(document.getElementById('root')).render(
 
   <StrictMode>
-     <Provider store={Store}>
+    <Provider store={Store}>
      <RouterProvider router={router} />
-     </Provider>
+    </Provider>
   </StrictMode>,
 )
