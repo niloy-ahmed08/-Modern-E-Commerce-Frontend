@@ -5,21 +5,24 @@ import { CiHeart } from "react-icons/ci";
 import { useNavigate } from 'react-router';
 
 
-const CustmPcard = ({ parsents, imgsrc, produtname, ratemathmathics, price, discauntprice, className,classname,flexess,rating,id }) => {
+const CustmPcard = ({ parsents, imgsrc, produtname, ratemathmathics, price, discauntprice, className,classname,flexess,rating,id}) => {
         
 
-           let navigate = useNavigate()
- 
-             const productdetals = ()=>{
 
-                navigate(`/productdettes/${id}`)
-                 
-             }
+    const navigate = useNavigate()
 
+    const handaledettales = ()=>{
+
+        navigate(`/productdettals/${id}`)
+
+
+    }
+
+          
     return (
         <>
 
-            <div onClick={productdetals}  className='w-67.5  group'>
+            <div onClick={handaledettales}   className='w-67.5  group'>
 
                 <div className=' relative bg-[#F5F5F5] pt-11 pl-0  overflow-hidden h-62.5'>
                     <span className=' absolute top-3 left-3   py-2 px-3 text-xs  rounded-sm bg-primary text-white'>-{parsents}%</span>

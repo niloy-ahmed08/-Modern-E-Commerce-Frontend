@@ -26,8 +26,8 @@ export const router = createBrowserRouter([
       { path: "navitgateshopNow", Component: Shop },
       { path: "shop", Component: Shop },
       { path: "contact", Component: Contact },
-      { path: "productdettes/:id", Component: Productdettels },
-
+      { path: "productdettals/:id", Component: Productdettels},
+       
 
     ],
   },

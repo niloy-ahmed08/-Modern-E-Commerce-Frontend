@@ -2,53 +2,65 @@
 import React, { useEffect, useState } from 'react'
 import { FaArrowRightFromBracket } from "react-icons/fa6";
 import CustmPcard from '../Components/CustmPcard';
-import PaginationTwo from '../Components/PaginationTwo';
+
 import { useDispatch, useSelector } from 'react-redux';
 import { ProductReducer } from '../Slice/ProductSlice';
-import { producttworeducer } from '../Slice/Producttwoslice';
+
+import PaginaTions from '../Components/Paginations';
+import axios, { Axios } from 'axios';
+import {  data } from 'react-router';
 
 
 const NewShop = () => {
 
 
-    // const [products, setproducts] = useState([])
-    const [show,setshow]=useState(6)
+    const [products, setproducts] = useState([])
+    const [show, setshow] = useState(6)
 
     const Dishpatch = useDispatch()
 
-    const products = useSelector(state => state.storeskey.value)
+    const product = useSelector(state => state.storeskey.value)
 
 
-    useEffect(() => {
+           const productallaxios = async ()=>{
 
-        fetch('https://dummyjson.com/products')
-            .then(res => res.json())
-            // .then((data) => setproducts(data.products))
-            .then((data) => Dishpatch(ProductReducer(data.products)))
-             
+            let data = await axios.get('https://dummyjson.com/products?limit=100')
+            Dishpatch(ProductReducer(data.data.products))
+              setproducts(data.data.products)
 
-    }, [])
+           }
 
 
+            useEffect(()=>{
 
-           const unicategorymain = [...new Set(products.map((item)=>item.category))]
-            
+                productallaxios ()
+            },[])
 
-            const handalecategorys = (itemcategories)=>{
 
-                 let onebyonecategory = products.filter((items)=>items.category == itemcategories)
+    // useEffect(() => {
 
-                  Dishpatch(ProductReducer(onebyonecategory))
-            }
+    //     fetch('https://dummyjson.com/products')
+    //         .then(res => res.json())
+    //         // .then((data) => setproducts(data.products))
+    //         .then((data) => Dishpatch(ProductReducer(data.products)))
 
-              const handaleall = ()=>{
 
-                 Dishpatch(producttworeducer(products))
+    // }, [])
 
-              }
 
-    
 
+ 
+                const unicategoriesmains = [...new Set(products.map((items)=>items.category))]
+               
+                const uniccategory = (itemuniccategory)=>{
+
+                    let unicproduts = products.filter((item)=>item.category == itemuniccategory)
+                    
+                    Dishpatch(ProductReducer(unicproduts))
+
+                }
+
+               
 
 
     return (
@@ -68,7 +80,7 @@ const NewShop = () => {
                         <div className='flex gap-2 items-center'>
                             <h1 className='text-lg font-bold'>Show :</h1>
                             <div>
-                                <select onChange={(e)=>setshow(e.target.value)} className='border border-gray-300 py-1 px-8' name="" id="">
+                                <select onChange={(e) => setshow(e.target.value)} className='border border-gray-300 py-1 px-8' name="" id="">
                                     <option value="6">6</option>
                                     <option value="9">9</option>
                                     <option value="12">12</option>
@@ -83,15 +95,14 @@ const NewShop = () => {
 
                             <ul className='py-20 space-y-4'>
 
-                                <span onClick={()=>handaleall()} className=' font-semibold text-black  '>All products</span>
+                                <span onClick={()=>Dishpatch(ProductReducer(products))} className=' cursor-pointer font-semibold text-black  '>All products</span>
 
+                             {
+                               unicategoriesmains.map((itemuniccategory)=>{
+                             return <li onClick={()=>uniccategory (itemuniccategory)} className='cursor-pointer text-sm font-semibold mt-4'>{itemuniccategory} </li>
+                               })
+                             }
 
-                                {
-                                    unicategorymain.map((itemcategories)=>{
-                                        return <li className='mt-2' onClick={()=>handalecategorys(itemcategories)}>{itemcategories}</li>
-                                    })
-                                }
-                                
 
                             </ul>
 
@@ -101,7 +112,7 @@ const NewShop = () => {
 
                             <div className='flex flex-wrap justify-between gap-y-9.5 gap-x-5 mt-10 '>
 
-{/* 
+                                {/* 
                                 {
 
                                     products.map((item) => {
@@ -123,7 +134,7 @@ const NewShop = () => {
 
 
 
-                            <PaginationTwo itemsPerPage={show} products={products} />
+                                <PaginaTions itemsPerPage={show} product={products} />
                             </div>
 
 

@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 const ReactPaginate = ReactPaginateModule?.default ?? ReactPaginateModule;
 
 
-const PaginaTion = ({ itemsPerPage, }) => {
+const PaginaTions = ({ itemsPerPage ,product}) => {
 
   const products = useSelector(state => state.storeskey.value)
 
@@ -84,4 +84,4 @@ const PaginaTion = ({ itemsPerPage, }) => {
   )
 }
 
-export default PaginaTion
+export default PaginaTions

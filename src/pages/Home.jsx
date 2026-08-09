@@ -12,12 +12,13 @@ import SingUp from '../Components/SingUp'
 import CustomerService from '../Components/CustomerService'
 import Shop from './Shop'
 import SounBox from '../Components/SounBox'
+import NewShop from './NewShop'
  
 
 const Home = () => {
   return (
     <div>
-     
+        <NewShop/>
         <Banner/>
         <CountDown/>
          <ProductCard/>
