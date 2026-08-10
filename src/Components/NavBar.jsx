@@ -3,10 +3,20 @@ import { IoIosSearch } from "react-icons/io";
 import { FaRegHeart } from "react-icons/fa6";
 import navlogos from '../assets/Navlogo.png'
 import { CiShoppingCart } from "react-icons/ci";
-import { NavLink } from "react-router";
+import { NavLink, useNavigate } from "react-router";
+import { useSelector } from 'react-redux';
 
 
 const NavBar = () => {
+
+
+   const selector = useSelector((state)=>state.products.cart)
+ 
+           const navigate = useNavigate()
+
+        
+
+
   return (
     <div className=' border-b'>
       
@@ -50,7 +60,12 @@ const NavBar = () => {
 
             <div className='flex gap-4 '>
               <FaRegHeart className='text-[30px]' />
-              <CiShoppingCart className='text-[30px]'/>
+              <div onClick={()=>navigate('/handaletocart')} className=' relative'>
+              <CiShoppingCart  className='text-[32px]'/>
+              <div className=' absolute -top-2 -right-2 size-6 rounded-full bg-primary text-white text-xs flex items-center justify-center'>
+                  {selector.length}
+              </div>
+              </div>
             </div>
            </div>
        </div>

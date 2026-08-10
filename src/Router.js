@@ -9,6 +9,10 @@ import SellinghProducts from "./Components/SellinghProducts";
 import Shop from "./pages/Shop";
 import Contact from "./Components/Contact";
 import Productdettels from "./pages/Productdettels";
+import Cart from "./pages/Cart";
+
+
+
 
 
 export const router = createBrowserRouter([
@@ -26,8 +30,8 @@ export const router = createBrowserRouter([
       { path: "navitgateshopNow", Component: Shop },
       { path: "shop", Component: Shop },
       { path: "contact", Component: Contact },
-      { path: "productdettals/:id", Component: Productdettels},
-       
+        { path: "productdettels/:id", Component: Productdettels },
+         { path: "handaletocart", Component: Cart},
 
     ],
   },

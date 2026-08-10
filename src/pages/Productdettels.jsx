@@ -4,8 +4,8 @@ import game2 from '../assets/img1.png'
 import game1 from '../assets/image 63.png'
 import { Rate } from 'antd'
 import { FaHeart } from "react-icons/fa";
-import { useParams } from 'react-router'
 import axios from 'axios'
+import { useParams } from 'react-router'
 
 
 
@@ -14,28 +14,31 @@ import axios from 'axios'
 const Productdettels = () => {
     const [count, setcount] = useState(true)
 
-  
-    const [images,setimages]=useState([])
-     const[product,setproduct]=useState([])
+      const [product,setproduct]=useState([])
+      const [images,setimages]=useState([])
 
-        const {id} = useParams()
+       const {id} = useParams()
+   
+       
         
-               
+        const Allproducts = async ()=>{
 
-            const AllProducts = async ()=>{
-
-                let datas = await axios.get(`https://dummyjson.com/products/${id}`)
-
-                   setproduct(datas.data)
-                   setimages(datas.data.images)
-                
-              }
-
-             useEffect(()=>{
-                AllProducts()
-             },[])
+               let data = await  axios.get(`https://dummyjson.com/products/${id}`)
               
-          console.log(product)
+               setproduct(data.data)
+               setimages(data.data.images)
+            
+        }
+
+        console.log(product)
+           
+
+
+                 useEffect(()=>{
+                    Allproducts()
+                 },[])        
+
+             
 
 
 
@@ -59,11 +62,9 @@ const Productdettels = () => {
                     <div className=' flex  gap-7.5'>
                         <div className='space-y-7 '>
 
-
-                             {
+                          {
                             images.map((item)=><img className='w-34.5 h-42.5 bg-[#F5F5F5] rounded-sm' src={item} alt="" />)
-                             }
-                            
+                          }
 
                         </div>
 

@@ -3,76 +3,70 @@ import Container from '../Components/Container'
 import { FaArrowRightFromBracket } from "react-icons/fa6";
 import CustmPcard from '../Components/CustmPcard';
 import Item from 'antd/es/list/Item';
-import ReactPaginateModule from 'react-paginate';
+import BreadCump from '../Components/BreadCump';
 import PaginaTion from '../Components/PaginaTion';
-import { Skeleton } from 'antd';
+import Skilietoon from '../Components/Skilietoon';
+import ReactPaginateModule from 'react-paginate';
 import { useDispatch, useSelector } from 'react-redux';
-import { ProductReducer } from '../Slice/ProductSlice';
-import axios from 'axios';
-import { data } from 'react-router';
-
-
 const ReactPaginate = ReactPaginateModule?.default ?? ReactPaginateModule;
+import axios from 'axios';
+import { ProductReducer } from '../slice/ProductSlice';
 
 const Shop = () => {
 
 
-    const [Products, setproducts] = useState([])
-    const[show,setshow]=useState(6)
-    const[loading,setloading]=useState(true)
 
-        const DishPatch = useDispatch()
+    const [products,setproducts]=useState([])
+    const [show,setshow]=useState(6)
+    const [loading,setloading]=useState(true)
+
+
       
-        const product = useSelector(state => state. storeskey.value)
+     const Dispatch = useDispatch()
+     
+         const data = useSelector(state => state.products.value)
 
-         
+              const Allproducts = async ()=>{
+               let data = await  axios.get('https://dummyjson.com/products')
+               Dispatch(ProductReducer(data.data.products))
+               setloading(false)
+               setproducts(data.data.products)
+              }
 
 
+                 useEffect(()=>{
+                    Allproducts()
+                 },[])
+
+
+  
     // useEffect(() => {
 
-    //     fetch('https://dummyjson.com/products?limit=100')
+    //     fetch('https://dummyjson.com/products')
     //         .then(res => res.json())
-    //         .then((data) => DishPatch(ProductReducer(data.products)))
-    //         // .then((data) => setproducts(data.products))
-    //         .then((data)=>(setloading(false)))
-
+    //         .then((data)=>Dispatch(ProductReducer(data.products)))
+    //         // .then((data)=>setproducts(data.products))
+    //         .then(()=>setloading(false))
     // }, [])
 
 
-              const AllProducts = async ()=>{
+            const unikCategory = [...new Set(products.map((item)=>item.category))]
 
-                let datas = await axios.get('https://dummyjson.com/products?limit=100')
+               const handaleategoryes = (item)=>{
 
-               DishPatch(ProductReducer(datas.data.products))
-               setproducts(datas.data.products)
-                 setloading(false)
+                    let categorybycategory = products.filter((items)=>items.category == item)
+                     Dispatch(ProductReducer(categorybycategory))
+                 
+               }
 
-              }
-
-             useEffect(()=>{
-                AllProducts()
-             },[])
               
-            
-  
-            const unikcategoy = [...new Set(Products.map((item)=>item.category))]
-
-       
-                 const handalecategory = (unikitems)=>{
-
-                    let unicategoriesmain = Products.filter((itemcategorymain)=>itemcategorymain.category == unikitems)
-                     DishPatch(ProductReducer(unicategoriesmain))
-                 }
-            
 
     return (
         <div className='py-25'>
             <Container>
 
                 <div className='flex gap-2 mt- items-center'>
-                    <h1>Home</h1>
-                    <h3>/</h3>
-                    <h2>PathName </h2>
+                    <BreadCump />
                 </div>
 
                 <div className='flex justify-between items-center mt-12.5'>
@@ -89,20 +83,20 @@ const Shop = () => {
                     </div>
                 </div>
 
-                <div className='flex  gap-x-25 gap-y-3.5'>
+                <div className='flex flex-col lg:flex-row gap-6 lg:gap-8'>
 
-                    <div className='w-[20%] pr-5  '>
+                    <div className='w-full lg:w-[22%] xl:w-[20%] pr-0 lg:pr-5'>
 
                         <ul className='py-20 space-y-4'>
 
-                        <li onClick={()=>DishPatch(ProductReducer(Products))} className=' cursor-pointer text-sm font-semibold'>All Products</li>
-                         
-                          {
-                            unikcategoy.map((unikitems)=>{
-                               return <li className='cursor-pointer text-sm font-semibold mt-4' onClick={()=>handalecategory(unikitems)}>{unikitems}</li>
-                            })
-                         } 
-                          
+                           <h1 onClick={()=>(Dispatch(ProductReducer((products))))}  className='text-lg font-semibold cursor-pointer text-black'>All Products</h1>
+
+                         {
+                           unikCategory.map((item)=>{
+                                 return <li  onClick={()=>handaleategoryes(item)} className='text-lg font-semibold cursor-pointer'>{item}</li>
+                           })
+                         }
+                            
 
                         </ul>
 
@@ -110,25 +104,44 @@ const Shop = () => {
 
                     <div className='w-[80%]'>
 
-                        <div className=''>
-                          {
-                            loading ? <>
-                            <div className='flex flex-wrap  gap-y-10 gap-x-5 mt-10 '>
+                        <div className='w-full'>
 
-                               <Skeleton/>
-                                <Skeleton/>
-                                 <Skeleton/>
-                                 <Skeleton/>
-                                 <Skeleton/>
-                            </div>
-                                 
-                            </>
-                            :
-                          <PaginaTion itemsPerPage={show}  />
-                          } 
+                       {/* {
+                        products.map((item)=>{
+                            return <CustmPcard
+                            
+                            imgsrc={item.thumbnail}
+                             produtname={item.title}
+                             price={item.price}
+                             parsents={item.discountPercentage}
+                             discauntprice={(item.price - (item.price * (item.discountPercentage/100))).toFixed(2)}
+                              rating={item.rating}
+                              ratemathmathics={item.reviews.length}
+                            
+                            />
+                        })
+                       }  */}
+                       {
+
+                        loading ?
+                        <div className='flex flex-wrap gap-10'>
+                        <Skilietoon/>
+                            <Skilietoon/>
+                                <Skilietoon/>
+                                    <Skilietoon/>
+                                        <Skilietoon/>
+                                            <Skilietoon/>
+                        </div>
+                        
+                        :
+                       <PaginaTion itemsPerPage={show}  />
+                       }
+
+
+
                         </div>
 
-                        
+
 
                     </div>
 

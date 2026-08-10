@@ -2,15 +2,18 @@ import React, { useEffect, useState } from 'react';
 import ReactPaginateModule from 'react-paginate';
 import CustmPcard from './CustmPcard';
 import { useSelector } from 'react-redux';
+
+
 const ReactPaginate = ReactPaginateModule?.default ?? ReactPaginateModule;
 
 
-const PaginaTion = ({ itemsPerPage, }) => {
+const PaginaTion = ({ itemsPerPage}) => {
 
-  const products = useSelector(state => state.storeskey.value)
+              const data = useSelector(state => state.products.value)
 
 
-  const items = products
+
+  const items = data
 
   function Items({ currentItems }) {
     return (
@@ -22,6 +25,7 @@ const PaginaTion = ({ itemsPerPage, }) => {
             currentItems.map((item) => (
               <div>
                 <CustmPcard
+                  productDettels={item}
                   id={item.id}
                   imgsrc={item.thumbnail}
                   produtname={item.title}
@@ -74,7 +78,7 @@ const PaginaTion = ({ itemsPerPage, }) => {
         previousLabel=""
         renderOnZeroPageCount={null}
         className='flex gap-10 items-center mt-10'
-        pageClassName='bg-black px-3 py-1 text-white text-xs'
+        pageClassName='bg-black px-3 py-1 text-white text-xs cursor-pointer'
         previousClassName='hidden'
       />
     </>

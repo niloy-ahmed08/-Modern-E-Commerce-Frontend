@@ -1,12 +1,10 @@
 import React from 'react'
-import { Rate } from 'antd';
+import {  Rate } from 'antd';
 
 const Skilietoon = () => {
   return (
-    <>
-
-   
- <div class="relative flex flex-col mt-6 text-gray-700 bg-white shadow-md bg-clip-border rounded-xl w-68 animate-pulse">
+    <div>
+      <div class="relative flex flex-col mt-6 text-gray-700 bg-white shadow-md bg-clip-border rounded-xl w-68 animate-pulse">
   <div
     class="relative grid h-56 mx-4 mt-4 overflow-hidden text-gray-700 bg-gray-300 bg-clip-border rounded-xl place-items-center">
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
@@ -16,9 +14,9 @@ const Skilietoon = () => {
       </path>
     </svg>
   </div>
-  <div class="p-6">
+  <div class="pr-3 pt-5 pl-3 pb-3">
     <div
-      class="block w-56 h-3 py-4 font-sans text-5xl antialiased font-semibold leading-tight tracking-normal bg-gray-300 rounded-full text-inherit">
+      class="block w-56 h-3 mb-4 font-sans text-5xl antialiased font-semibold leading-tight tracking-normal bg-gray-300 rounded-full text-inherit">
       &nbsp;
     </div>
     <div
@@ -26,26 +24,20 @@ const Skilietoon = () => {
       &nbsp;
     </div>
     <div
-      class="block w-full h-2 mb-2 font-sans text-base antialiased font-light leading-relaxed bg-gray-300 rounded-full text-inherit">
+      class="block w-full h-2 mb-1 font-sans text-base antialiased font-light leading-relaxed bg-gray-300 rounded-full text-inherit">
       &nbsp;
     </div>
-    <div
-      class="block w-full h-2 mb-2 font-sans text-base antialiased font-light leading-relaxed bg-gray-300 rounded-full text-inherit">
-      &nbsp;
-    </div>
-    <div
-      class="block w-full h-2 mb-2 font-sans text-base antialiased font-light leading-relaxed bg-gray-300 rounded-full text-inherit">
-      &nbsp;
-    </div>
+   
   </div>
-  <div class="p-6 pt-0">
-   <Rate allowHalf defaultValue={2.5} />;
+  <div  className='pr-3'>
+
+    <Rate allowHalf defaultValue={4.76}  className=' text-gray-300'  />
   </div>
+
+
 </div>
-
- 
-
-    </>
+      
+    </div>
   )
 }
 
