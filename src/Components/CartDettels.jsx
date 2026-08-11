@@ -1,5 +1,5 @@
 import React from 'react'
-import { FaAngleDown } from "react-icons/fa6";
+import { FaAngleDown, FaAngleUp } from "react-icons/fa6";
 import { FiChevronUp } from "react-icons/fi";
 
 
@@ -21,11 +21,11 @@ const CartDettels = ({imgsrc,title,price,subtototal}) => {
             </div>
 
            <div className='w-[34%]'>
-            <div className='border px-3 py-2 rounded-sm flex items-center gap-1 w-18  '>
+            <div className='border px-3 py-2 rounded-sm flex items-center gap-2 w-18  '>
 
                     <p>0</p>
                     <div>
-                    <FiChevronUp  />
+                    <FaAngleUp  />
                      <FaAngleDown />
 
                     </div>

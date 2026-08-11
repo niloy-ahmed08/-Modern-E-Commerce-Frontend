@@ -106,21 +106,6 @@ const Shop = () => {
 
                         <div className='w-full'>
 
-                       {/* {
-                        products.map((item)=>{
-                            return <CustmPcard
-                            
-                            imgsrc={item.thumbnail}
-                             produtname={item.title}
-                             price={item.price}
-                             parsents={item.discountPercentage}
-                             discauntprice={(item.price - (item.price * (item.discountPercentage/100))).toFixed(2)}
-                              rating={item.rating}
-                              ratemathmathics={item.reviews.length}
-                            
-                            />
-                        })
-                       }  */}
                        {
 
                         loading ?

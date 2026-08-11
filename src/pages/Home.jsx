@@ -12,6 +12,7 @@ import SingUp from '../Components/SingUp'
 import CustomerService from '../Components/CustomerService'
 import Shop from './Shop'
 import SounBox from '../Components/SounBox'
+import ShopTwo from './ShopTwo'
 
  
 
@@ -20,6 +21,7 @@ const Home = () => {
     <div>
        
         <Banner/>
+         <ShopTwo/>
         <CountDown/>
          <ProductCard/>
          <CataGories/>
