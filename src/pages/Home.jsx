@@ -22,13 +22,13 @@ const Home = () => {
        
         <Banner/>
     
+            <Shop/>
         <CountDown/>
          <ProductCard/>
          <CataGories/>
           <SellinghProducts/>
           <SounBox/>
           <ExploreProducts/>
-            <Shop/>
           <NewArival/>
           <CustomerService/>
           <LoginExclusive/>
