@@ -10,7 +10,8 @@ import ReactPaginateModule from 'react-paginate';
 import { useDispatch, useSelector } from 'react-redux';
 const ReactPaginate = ReactPaginateModule?.default ?? ReactPaginateModule;
 import axios from 'axios';
-import { ProductReducer } from '../slice/ProductSlice';
+import { SetReducer } from '../Slice/ProductSlice';
+
 
 const Shop = () => {
 
@@ -28,7 +29,7 @@ const Shop = () => {
 
               const Allproducts = async ()=>{
                let data = await  axios.get('https://dummyjson.com/products')
-               Dispatch(ProductReducer(data.data.products))
+               Dispatch(SetReducer(data.data.products))
                setloading(false)
                setproducts(data.data.products)
               }
@@ -55,7 +56,7 @@ const Shop = () => {
                const handaleategoryes = (item)=>{
 
                     let categorybycategory = products.filter((items)=>items.category == item)
-                     Dispatch(ProductReducer(categorybycategory))
+                     Dispatch(SetReducer(categorybycategory))
                  
                }
 
@@ -89,7 +90,7 @@ const Shop = () => {
 
                         <ul className='py-20 space-y-4'>
 
-                           <h1 onClick={()=>(Dispatch(ProductReducer((products))))}  className='text-lg font-semibold cursor-pointer text-black'>All Products</h1>
+                           <h1 onClick={()=>(Dispatch(SetReducer((products))))}  className='text-lg font-semibold cursor-pointer text-black'>All Products</h1>
 
                          {
                            unikCategory.map((item)=>{
@@ -111,11 +112,7 @@ const Shop = () => {
                         loading ?
                         <div className='flex flex-wrap gap-10'>
                         <Skilietoon/>
-                            <Skilietoon/>
-                                <Skilietoon/>
-                                    <Skilietoon/>
-                                        <Skilietoon/>
-                                            <Skilietoon/>
+                       
                         </div>
                         
                         :

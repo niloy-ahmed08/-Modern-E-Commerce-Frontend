@@ -6,13 +6,13 @@ export const ProductSlice = createSlice({
   initialState: {
     value: [],
     cart : localStorage.getItem("Cart") ? JSON.parse(localStorage.getItem("Cart")) :[],
-    newvalue:[],
-    addtocart: localStorage.getItem('Carts') ? JSON.parse(localStorage.getItem('Carts')):[]
+  
+   
 
 
   },
   reducers: {
-    ProductReducer : (state,action) => {
+    SetReducer : (state,action) => {
            state.value = action.payload
     },
 
@@ -21,19 +21,6 @@ export const ProductSlice = createSlice({
            localStorage.setItem('Cart',JSON.stringify(state.cart))
     },
 
-    
-     newReducer : (state,action) => {
-           state.newvalue = action.payload
-           
-    },
-
-      addtocartReducer : (state,action) => {
-           state.addtocart = [...state.addtocart,action.payload]
-           localStorage.setItem('Carts',JSON.stringify(state.addtocart))
-           
-    },
-   
-   
 
    
    
@@ -41,6 +28,6 @@ export const ProductSlice = createSlice({
 })
 
 // Action creators are generated for each case reducer function
-export const { ProductReducer,CartReducer,newReducer,addtocartReducer} = ProductSlice.actions
+export const { SetReducer,CartReducer,} = ProductSlice.actions
 
 export default ProductSlice.reducer

@@ -13,13 +13,11 @@ const NavBar = () => {
  
         const selector = useSelector(state=>state.products.cart)
          
-       const datacart = useSelector(star=>star.products.addtocart)
         
 
     const navigate = useNavigate()
 
-    const navigatenew = useNavigate()
-    
+
 
   return (
     <div className=' border-b'>
@@ -70,15 +68,6 @@ const NavBar = () => {
                 {selector.length}
               </div>
               </div>
-
-
-<div onClick={()=>navigatenew('/cartdettelsnew')}  className=' relative'>
-              <CiShoppingCart  className='text-[32px]'/>
-              <div className=' absolute -top-2 -right-2 size-6 rounded-full bg-primary text-white text-xs flex items-center justify-center'>
-               {datacart.length}
-              </div>
-              </div>
-
 
 
             </div>
