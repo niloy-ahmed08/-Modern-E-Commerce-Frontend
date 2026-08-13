@@ -4,7 +4,7 @@ import { LuEye } from "react-icons/lu";
 import { CiHeart } from "react-icons/ci";
 import { useNavigate } from 'react-router';
 import { useDispatch, useSelector } from 'react-redux';
-import { CartReducer } from '../slice/ProductSlice';
+import { CartReducer } from '../Slice/ProductSlice';
 
 
 
