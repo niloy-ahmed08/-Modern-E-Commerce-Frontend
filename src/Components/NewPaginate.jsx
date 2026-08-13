@@ -26,6 +26,7 @@ const NewPaginate = ({ itemsPerPage = 6,  }) => {
                         currentItems.map((item) => (
                             <div>
                                 <Card
+                                  productDettls={item}
                                    id={item.id}
                                     produtname={item.title}
                                     price={item.price}

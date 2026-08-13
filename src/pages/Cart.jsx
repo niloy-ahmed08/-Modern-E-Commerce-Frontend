@@ -11,8 +11,8 @@ const Cart = () => {
        const data = useSelector(star=>star.products.cart)
 
 
-
-      console.log(data)
+    
+   
 
 
     return (

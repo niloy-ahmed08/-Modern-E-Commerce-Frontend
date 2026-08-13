@@ -1,11 +1,13 @@
 import { createSlice } from '@reduxjs/toolkit'
+import { jsx } from 'react/jsx-runtime'
 
 export const ProductSlice = createSlice({
   name: 'counter',
   initialState: {
     value: [],
     cart : localStorage.getItem("Cart") ? JSON.parse(localStorage.getItem("Cart")) :[],
-    newvalue:[]
+    newvalue:[],
+    addtocart: localStorage.getItem('Carts') ? JSON.parse(localStorage.getItem('Carts')):[]
 
 
   },
@@ -24,6 +26,13 @@ export const ProductSlice = createSlice({
            state.newvalue = action.payload
            
     },
+
+      addtocartReducer : (state,action) => {
+           state.addtocart = [...state.addtocart,action.payload]
+           localStorage.setItem('Carts',JSON.stringify(state.addtocart))
+           
+    },
+   
    
 
    
@@ -32,6 +41,6 @@ export const ProductSlice = createSlice({
 })
 
 // Action creators are generated for each case reducer function
-export const { ProductReducer,CartReducer,newReducer} = ProductSlice.actions
+export const { ProductReducer,CartReducer,newReducer,addtocartReducer} = ProductSlice.actions
 
 export default ProductSlice.reducer

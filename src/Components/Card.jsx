@@ -3,9 +3,11 @@ import { LuEye } from "react-icons/lu";
 import {  Rate } from 'antd';
 import { CiHeart } from "react-icons/ci";
 import { useNavigate } from 'react-router';
+import { useDispatch, useSelector } from 'react-redux';
+import { addtocartReducer } from '../slice/ProductSlice';
 
 
-const Card = ( {parsents, imgsrc, produtname, ratemathmathics, price, discauntprice, className,classname,flexess,rating,id}) => {
+const Card = ( {parsents, imgsrc, produtname, ratemathmathics, price, discauntprice, className,classname,flexess,rating,id,productDettls}) => {
 
 
                 const newnavigate = useNavigate()
@@ -13,6 +15,17 @@ const Card = ( {parsents, imgsrc, produtname, ratemathmathics, price, discauntpr
               const productdettelsee = ()=>{
 
                   newnavigate(`newproductdettels/${id}`)
+
+              }
+
+              const dispatch = useDispatch()
+
+              const datacart = useSelector(star=>star.products.addtocart)
+              
+
+              const addtoeCart = ()=>{
+
+               dispatch(addtocartReducer(productDettls))
 
               }
 
@@ -32,7 +45,7 @@ const Card = ( {parsents, imgsrc, produtname, ratemathmathics, price, discauntpr
                             <LuEye className='' />
                         </div>
                     </div>
-                    <button  className='cursor-pointer absolute -bottom-11 group-hover:bottom-0 duration-200 ease-linear py-2 px-4 w-full bg-black text-white'>Add Cart</button>
+                    <button  onClick={addtoeCart}  className='cursor-pointer absolute -bottom-11 group-hover:bottom-0 duration-200 ease-linear py-2 px-4 w-full bg-black text-white'>Add Cart</button>
                 </div>
 
 
