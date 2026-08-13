@@ -20,9 +20,9 @@ const Home = () => {
   return (
     <div>
        
+            <Shop/>
         <Banner/>
     
-            <Shop/>
         <CountDown/>
          <ProductCard/>
          <CataGories/>
