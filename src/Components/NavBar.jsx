@@ -12,11 +12,15 @@ const NavBar = () => {
 
  
         const selector = useSelector(state=>state.products.cart)
-         
-        
+
+        const dataheart = useSelector(state=>state.products.heart)
+      
+
+       
 
     const navigate = useNavigate()
 
+    const wishnavigate = useNavigate()
 
 
   return (
@@ -61,11 +65,14 @@ const NavBar = () => {
             </div>
 
             <div className='flex gap-4 '>
+              <div onClick={()=>wishnavigate('/wishlistdettels')} className='relative'>
               <FaRegHeart className='text-[30px]' />
+               <div className='w-5 h-5 rounded-full  flex items-center justify-center absolute -top-1 -right-2
+                 text-sm font-semibold  bg-primary  text-white'>{dataheart.length}</div>
+              </div>
               <div onClick={()=>navigate('/cartdettels')}  className=' relative'>
               <CiShoppingCart  className='text-[32px]'/>
-              <div className=' absolute -top-2 -right-2 size-6 rounded-full bg-primary text-white text-xs flex items-center justify-center'>
-                {selector.length}
+              <div className=' absolute -top-2 -right-2 size-6 rounded-full bg-primary text-white text-xs flex items-center justify-center'> {selector.length}
               </div>
               </div>
 

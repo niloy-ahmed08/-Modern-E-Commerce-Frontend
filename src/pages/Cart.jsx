@@ -5,15 +5,17 @@ import { useSelector } from 'react-redux'
 
 
 
+
 const Cart = () => {
 
 
-       const data = useSelector(star=>star.products.cart)
+     
 
 
-    
+       const data = useSelector(state => state.products.cart)
    
 
+       
 
     return (
         <div className='py-20'>
@@ -30,10 +32,13 @@ const Cart = () => {
                      {
                         data.map((item)=>{
                          return <CartDettels
+                             key={item.id}
+                               id={item.id}
                                imgsrc={item.images}
                                title={item.title}
                                price={item.price}
                                subtototal={item.price}
+                               
                          />
                         })
                      }

@@ -10,6 +10,7 @@ import Shop from "./pages/Shop";
 import Contact from "./Components/Contact";
 import Productdettels from "./pages/Productdettels";
 import Cart from "./pages/Cart";
+import WishList from "./pages/WishList";
 
 
 
@@ -33,7 +34,7 @@ export const router = createBrowserRouter([
       { path: "contact", Component: Contact },
       { path: "productdettels/:id", Component: Productdettels },
       { path: "cartdettels", Component: Cart},
-
+      { path: "wishlistdettels", Component: WishList},
 
 
 

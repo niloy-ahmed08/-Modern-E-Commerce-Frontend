@@ -21,8 +21,7 @@ const Home = () => {
     <div>
        
         <Banner/>
-            <Shop/>
-    
+         <Shop/>
         <CountDown/>
          <ProductCard/>
          <CataGories/>

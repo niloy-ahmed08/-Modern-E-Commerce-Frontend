@@ -112,7 +112,10 @@ const Shop = () => {
                         loading ?
                         <div className='flex flex-wrap gap-10'>
                         <Skilietoon/>
-                       
+                        <Skilietoon/>
+                        <Skilietoon/>
+                        <Skilietoon/>
+                        <Skilietoon/>
                         </div>
                         
                         :

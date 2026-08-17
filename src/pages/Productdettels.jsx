@@ -12,7 +12,7 @@ import { useParams } from 'react-router'
 
 
 const Productdettels = () => {
-    const [count, setcount] = useState(true)
+    const [count, setcount] = useState(0)
 
       const [product,setproduct]=useState([])
       const [images,setimages]=useState([])

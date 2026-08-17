@@ -25,6 +25,7 @@ const PaginaTion = ({ itemsPerPage}) => {
             currentItems.map((item) => (
               <div>
                 <CustmPcard
+                  heartdettes={item}
                   productDettels={item}
                   id={item.id}
                   imgsrc={item.thumbnail}

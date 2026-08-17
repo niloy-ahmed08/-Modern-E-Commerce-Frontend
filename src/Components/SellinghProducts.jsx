@@ -35,7 +35,7 @@ const SellinghProducts = () => {
                               }
                         </div>
 
-                        <div className='mt-15 flex gap-7.5 '>
+                        <div className='mt-15 flex justify-between '>
 
                               <div className=''>
                                     <CustmPcard
