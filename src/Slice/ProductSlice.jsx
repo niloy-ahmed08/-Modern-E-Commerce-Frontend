@@ -47,7 +47,17 @@ export const ProductSlice = createSlice({
                localStorage.setItem('heartkey', JSON.stringify(state.heart))
              }
 
-    }
+    },
+
+
+    wishremoveReducer : (state,action) => {
+      
+      state.heart = state.heart.filter((item)=>item.id !== action.payload)
+            
+             localStorage.setItem('CartKey',JSON.stringify(state.heart))
+           
+    },
+
 
 
    
@@ -56,6 +66,6 @@ export const ProductSlice = createSlice({
 })
 
 // Action creators are generated for each case reducer function
-export const { SetReducer,CartReducer,removeReducer,heartReducer} = ProductSlice.actions
+export const { SetReducer,CartReducer,removeReducer,heartReducer,wishremoveReducer} = ProductSlice.actions
 
 export default ProductSlice.reducer

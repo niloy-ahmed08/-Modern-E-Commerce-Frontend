@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux'
 const WishList = () => {
 
       const datahearts = useSelector(state=>state.products.heart)
-           console.log(datahearts)
+      
 
   return (
     <div className='py-20'>
@@ -22,7 +22,7 @@ const WishList = () => {
             datahearts.map((item)=>{
 
                 return <WishListDettels
-                
+                id={item.id}
                 title={item.title}
                 imgsrc={item.thumbnail}
                 discauntparsent={item.discountPercentage}

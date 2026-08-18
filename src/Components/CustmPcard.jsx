@@ -5,7 +5,7 @@ import { CiHeart } from "react-icons/ci";
 import { useNavigate } from 'react-router';
 import { useDispatch, useSelector } from 'react-redux';
 import { CartReducer, heartReducer } from '../Slice/ProductSlice';
-import { ToastContainer, toast, Slide } from 'react-toastify';
+import { toast, Slide,  } from 'react-toastify';
 
 
 
@@ -21,9 +21,9 @@ const CustmPcard = ({ parsents, imgsrc, produtname, ratemathmathics, price, disc
         
         if(!matchitemalredyadded){
             
-               toast.success('SuccsessfullY add to cart', {
+               toast.success('SuccsessfullY Product added to your cart!', {
                    position: "top-right",
-                   autoClose: 1090,
+                   autoClose: 2090,
                    hideProgressBar: false,
                    closeOnClick: false,
                    pauseOnHover: true,
@@ -35,9 +35,9 @@ const CustmPcard = ({ parsents, imgsrc, produtname, ratemathmathics, price, disc
                 return;
             }
             
-            toast.warn('Product ALready added!', {
+            toast.warn('Product is already in your cart!!', {
                 position: "top-right",
-                autoClose: 1190,
+                autoClose: 2190,
                 hideProgressBar: false,
                 closeOnClick: false,
                 pauseOnHover: true,
@@ -56,9 +56,9 @@ const CustmPcard = ({ parsents, imgsrc, produtname, ratemathmathics, price, disc
         
         if(!matchitemwish){
             
-               toast.success('SuccsessfullY add to WIsh', {
+               toast.success('Saved to your Wishlist!', {
                    position: "top-right",
-                   autoClose: 1090,
+                   autoClose: 2090,
                    hideProgressBar: false,
                    closeOnClick: false,
                    pauseOnHover: true,
@@ -70,9 +70,9 @@ const CustmPcard = ({ parsents, imgsrc, produtname, ratemathmathics, price, disc
                 return;
             }
             
-            toast.warn('WIsh ALready added!', {
+            toast.warn('Product is already in your Wishlist!', {
                 position: "top-right",
-                autoClose: 1190,
+                autoClose: 2190,
                 hideProgressBar: false,
                 closeOnClick: false,
                 pauseOnHover: true,
@@ -86,25 +86,28 @@ const CustmPcard = ({ parsents, imgsrc, produtname, ratemathmathics, price, disc
 
         
         
-               const data = useSelector(state => state.products.cart)
-               const wishdata = useSelector(state => state.products. heart)
-               
         
-            const navigate = useNavigate()
-
-    const productdettels = () => {
-
-        navigate(`/productdettels/${id}`)
-    }
-
-    const Dispatch = useDispatch()
-
-   
-
+        
+    
+        
+        
+        const navigate = useNavigate()
+        
+        const productdettels = () => {
+            
+            navigate(`/productdettels/${id}`)
+        }
+        
+        const Dispatch = useDispatch()
+        
+        
+        
+        
+               const datas = useSelector(state => state.products.cart)
 
     const handaleaddtocart = () => {
 
-           let matchitem = data.find((item)=>item.id === id)
+           let matchitem = datas.find((item)=>item.id === id)
 
            matchitem ? notify(true) :(
 
@@ -114,6 +117,11 @@ const CustmPcard = ({ parsents, imgsrc, produtname, ratemathmathics, price, disc
     
         
     }
+
+
+
+
+          const wishdata = useSelector(state => state.products. heart)
 
      const heartdispatch = useDispatch()
 
@@ -136,7 +144,7 @@ const CustmPcard = ({ parsents, imgsrc, produtname, ratemathmathics, price, disc
         <>
 
             <div className='w-full max-w-70 mx-auto group'>
-                <ToastContainer />
+                {/* <ToastContainer/> */}
                 <div className=' relative bg-[#F5F5F5] pt-11 pl-0  overflow-hidden h-62.5'>
                     <span  className=' absolute top-3 left-3   py-2 px-3 text-xs  rounded-sm bg-primary text-white'>-{parsents}%</span>
                     <img onClick={productdettels} src={imgsrc} alt="" className=' mx-auto ' />

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Container from './Container'
 import imglogin from '../assets/Contactimg.png'
-import { ToastContainer, toast, Bounce } from 'react-toastify';
+import {  toast, Bounce } from 'react-toastify';
 import { useNavigate } from 'react-router';
 import { IoEyeOutline } from "react-icons/io5";
 import { IoEyeOffOutline } from "react-icons/io5";
@@ -168,7 +168,7 @@ transition: Bounce,
 
         <>
 
-            <ToastContainer />
+            {/* <ToastContainer /> */}
             <div className='py-30'>
                 <Container>
 

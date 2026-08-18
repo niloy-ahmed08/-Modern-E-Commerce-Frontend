@@ -12,9 +12,8 @@ const Cart = () => {
      
 
 
-       const data = useSelector(state => state.products.cart)
-   
-
+       const datacart = useSelector(state => state.products.cart)
+  
        
 
     return (
@@ -30,7 +29,7 @@ const Cart = () => {
                 </div>
 
                      {
-                        data.map((item)=>{
+                        datacart.map((item)=>{
                          return <CartDettels
                              key={item.id}
                                id={item.id}

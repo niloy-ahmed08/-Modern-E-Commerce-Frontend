@@ -3,12 +3,32 @@ import { FaAngleDown, FaAngleUp } from "react-icons/fa6";
 import { FiChevronUp } from "react-icons/fi";
 import { useDispatch } from 'react-redux';
 import { removeReducer } from '../Slice/ProductSlice';
-import { toast, Bounce } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css'
+import { toast, Bounce, Slide } from 'react-toastify';
+
 
 
 
 const CartDettels = ({ imgsrc, title, price, subtototal, id }) => {
+
+
+
+
+     const notifycart = ()=>{
+
+          toast.info('Product removed from cart.!', {
+position: "top-right",
+autoClose: 2120,
+hideProgressBar: false,
+closeOnClick: false,
+pauseOnHover: true,
+draggable: true,
+progress: undefined,
+theme: "light",
+transition: Bounce,
+});
+
+
+     }
 
 
 
@@ -17,24 +37,21 @@ const CartDettels = ({ imgsrc, title, price, subtototal, id }) => {
   const handaletodellate = () => {
 
 
-    toast.error('🦄 Wow so easy!', {
-      position: "top-right",
-      autoClose: 1200,
-      hideProgressBar: false,
-      closeOnClick: false,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "light",
-      transition: Bounce,
-    });
     dispatch(removeReducer(id));
+
+    notifycart()
+
+
 
   };
 
 
   return (
+
+
+
     <div>
+      
       <div className="container">
 
         <div className='flex justify-between items-center   shadow-sm py-6 px-10 mt-10 rounded-sm'>

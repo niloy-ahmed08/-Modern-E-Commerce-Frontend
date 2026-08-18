@@ -1,13 +1,13 @@
 import React, { useState } from 'react'
 import Container from './Container'
 import imglogin from '../assets/Contactimg.png'
-import { ToastContainer, toast,  Bounce } from 'react-toastify';
+import {  toast,  Bounce } from 'react-toastify';
 import { IoMdEye } from "react-icons/io";
 import { IoEyeOffSharp } from "react-icons/io5";
 import { useNavigate } from 'react-router';
-import { BiSolidErrorAlt } from "react-icons/bi";
-import { RiSimCardWarningFill } from "react-icons/ri";
-import { FaCheckCircle } from "react-icons/fa";
+// import { BiSolidErrorAlt } from "react-icons/bi";
+// import { RiSimCardWarningFill } from "react-icons/ri";
+// import { FaCheckCircle } from "react-icons/fa";
 
 
 
@@ -151,7 +151,7 @@ transition: Bounce,
   return (
 
     <>
- <ToastContainer
+ {/* <ToastContainer
         icon={({ type, theme }) => {
           switch (type) {
             
@@ -165,7 +165,7 @@ transition: Bounce,
               return null;
           }
         }}
-      />
+      /> */}
       <div className='py-30'>
         <Container>
 
