@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router';
 import { useDispatch, useSelector } from 'react-redux';
 import { CartReducer, heartReducer } from '../Slice/ProductSlice';
 import { toast, Slide,  } from 'react-toastify';
+import { FaHeart } from "react-icons/fa6";
 
 
 
@@ -125,6 +126,10 @@ const CustmPcard = ({ parsents, imgsrc, produtname, ratemathmathics, price, disc
 
      const heartdispatch = useDispatch()
 
+
+   
+      const isliked = wishdata.some((item)=>item.id === id)
+
     const handaletoheart = ()=>{
 
         let matchitemwish = wishdata.find((item)=>item.id === id)
@@ -133,6 +138,7 @@ const CustmPcard = ({ parsents, imgsrc, produtname, ratemathmathics, price, disc
         heartdispatch(heartReducer(heartdettes)),
         notifywish(false)
         )
+       
 
     }
        
@@ -149,8 +155,15 @@ const CustmPcard = ({ parsents, imgsrc, produtname, ratemathmathics, price, disc
                     <span  className=' absolute top-3 left-3   py-2 px-3 text-xs  rounded-sm bg-primary text-white'>-{parsents}%</span>
                     <img onClick={productdettels} src={imgsrc} alt="" className=' mx-auto ' />
                     <div className=' absolute top-3 right-3  space-y-2'>
-                        <div onClick={handaletoheart} className='  bg-white w-8.5 h-8.5 rounded-full flex items-center justify-center'>
-                            <CiHeart  className='' />
+                        <div onClick={handaletoheart} className='  cursor-pointer bg-white w-8.5 h-8.5 rounded-full flex items-center justify-center'>
+                        {
+                           isliked ? (
+                            <FaHeart className='text-red-500' />
+
+                           )
+                           :(<CiHeart className='text-black' />
+                             )
+                        }
                         </div>
                         <div className='w-8.5 h-8.5 rounded-full flex items-center justify-center bg-white'>
                             <LuEye className='' />
