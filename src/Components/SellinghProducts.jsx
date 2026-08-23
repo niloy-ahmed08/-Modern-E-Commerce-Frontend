@@ -24,7 +24,7 @@ const SellinghProducts = () => {
             <div className='pb-15'>
                   <Container>
 
-                        <div className='flex justify-between'>
+                        <div className='flex lg:flex-row flex-col  lg:justify-between items-center'>
                               <SecHead
                                     headtitles='This Month'
                                     headtitletexttwo='Best Selling Products'
@@ -35,7 +35,7 @@ const SellinghProducts = () => {
                               }
                         </div>
 
-                        <div className='mt-15 flex justify-between '>
+                        <div className='mt-15 lg:flex-row  flex flex-col justify-between '>
 
                               <div className=''>
                                     <CustmPcard
@@ -97,7 +97,7 @@ const SellinghProducts = () => {
 
 
                         {
-                              view ? <div className='mt-15  grid grid-cols-4 gap-7.5 '>
+                              view ? <div className='mt-15 flex lg:flex-row flex-col  lg:grid lg:grid-cols-4 gap-7.5 '>
 
                                     <div className=''>
                                           <CustmPcard

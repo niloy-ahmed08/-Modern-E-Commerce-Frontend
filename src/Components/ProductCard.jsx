@@ -29,7 +29,7 @@ const ProductCard = () => {
       const { className, style, onClick } = props;
       return (
         <div
-          className=' cursor-pointer  h-11.5 w-11.5 rounded-full bg-[#F5F5F5] flex items-center justify-center absolute -top-20 right-6 '
+          className=' cursor-pointer  h-11.5 w-11.5 rounded-full bg-[#F5F5F5] hidden lg:flex items-center justify-center absolute -top-20 right-6 '
           // style={{ ...style, display: "block", background: "red" }}
           onClick={onClick}
         >
@@ -43,7 +43,7 @@ const ProductCard = () => {
       const { className, style, onClick } = props;
       return (
         <div
-          className='cursor-pointer h-11.5 w-11.5 rounded-full flex items-center justify-center bg-[#F5F5F5]  absolute -top-20 right-22'
+          className='cursor-pointer h-11.5 w-11.5 rounded-full hidden lg:flex items-center justify-center bg-[#F5F5F5]  absolute -top-20 right-22'
           onClick={onClick}
         >
           <FaArrowLeftLong className=' ' />
@@ -63,7 +63,34 @@ const ProductCard = () => {
   slidesToScroll: 3,
   arrows: true,
     nextArrow: <SampleNextArrow />,
-    prevArrow: <SamplePrevArrow />
+    prevArrow: <SamplePrevArrow />,
+
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 2,
+          infinite: true,
+          dots: false
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2
+        }
+      },
+      {
+        breakpoint: 570,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
          };
 
 
@@ -145,7 +172,7 @@ const ProductCard = () => {
 
                {
                 viewall ? 
-                <div className='mt-15  grid grid-cols-4 gap-7.5 '>
+                <div className='mt-15  lg:grid lg:grid-cols-4 flex-col lg:flex-row  gap-7.5 '>
 
            <div className=''>
             <CustmPcard
@@ -163,7 +190,7 @@ const ProductCard = () => {
                   <div className=''>
             <CustmPcard
             
-            imgsrc={keyboards}
+            imgsrc={remotes}
             produtname='The north coat'
             price='230'
             discauntprice='330'

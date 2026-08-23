@@ -5,7 +5,7 @@
 
 
 @utility container{
-  @apply mx-auto
+  @apply mx-auto 
 }
 
 
@@ -24,4 +24,8 @@
 .slick-dots .slick-active div{
   @apply bg-primary border-2 bg-primary
 
+}
+
+.slick-slide{
+  @apply flex! justify-center!
 }

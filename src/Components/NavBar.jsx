@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { IoIosSearch } from "react-icons/io";
 import { FaRegHeart } from "react-icons/fa6";
 import navlogos from '../assets/Navlogo.png'
 import { CiShoppingCart } from "react-icons/ci";
 import { NavLink, useNavigate } from "react-router";
 import { useSelector } from 'react-redux';
+import { FaBarsStaggered } from "react-icons/fa6";
 
 
 const NavBar = () => {
@@ -23,17 +24,22 @@ const NavBar = () => {
     const wishnavigate = useNavigate()
 
 
+    const [show ,setshow]=useState(false)
+
+
   return (
-    <div className=' border-b'>
+    <div className=' border-b relative'>
       
-      <div className='container mx-auto'>
+      <div className='container mx-auto px-3 lg:px-0'>
        
-       <div className='text-black flex justify-between py-7'>
+       <div className=' flex justify-between py-7 '>
         <div>
           <img src={navlogos} alt="" />
         </div>
 
-           <ul className='text-black flex gap-12 items-center text-[16px] font-normal '>
+        <div className={` ${show ? 'left-0' : '-left-full'} z-10 absolute lg:static  duration-300 ease-linear   lg:h-auto  -left-100 top-20 flex space-y-5   flex-col lg:flex-row justify-center lg:justify-between items-center lg:bg-transparent   bg-amber-300 lg:text-black w-[80%] lg:w-[80%]  `}>
+
+           <ul className=' lg:flex-row flex-col text-black flex gap-y-5 gap-x-12 items-center  text-[16px] font-normal '>
             <li className='cursor-pointer'>
 
           <NavLink to="/navitgatehome" end>
@@ -57,7 +63,7 @@ const NavBar = () => {
       </NavLink>
             </li>
            </ul>
-           <div className='flex justify-between items-center gap-7.5 cursor-pointer'>
+           <div className=' lg:flex-row flex-col text-black  gap-y-5 gap-x-12 flex justify-between items-center gap-7.5 cursor-pointer'>
             <div className=' relative pl-5 py-1.5 pr-3 bg-[#82828218]'>
            <input type="text" className='pr-17.5 cursor-pointer outline-none border border-gray-300' placeholder='What are you looking for? ' />
              <IoIosSearch className=' absolute top-1 right-3 text-[30px]'/>
@@ -79,6 +85,14 @@ const NavBar = () => {
 
             </div>
            </div>
+
+        </div>
+
+        <div>
+          <FaBarsStaggered onClick={()=>setshow(!show)} className='text-xl lg:hidden static' />
+
+        </div>
+
        </div>
 
       </div>

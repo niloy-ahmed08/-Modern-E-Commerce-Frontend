@@ -8,7 +8,7 @@ const CustomerService = () => {
     <div className=' py-15 '>
         <Container>
 
-            <div className='flex justify-between items-center'>
+            <div className='flex lg:flex-row flex-col  justify-between items-center'>
                 <div>
                     <img src={carlogo} className=' mx-auto block' alt="" />
                      <h1 className=' text-[20px] font-semibold text-black mt-9 mb-2.5'>FREE AND FAST DELIVERY</h1>
@@ -16,14 +16,14 @@ const CustomerService = () => {
                 </div>
 
                 
-                <div>
+                <div className='mt-4 lg:mt-0'>
                     <img src={carlogo3} className=' mx-auto block'  alt="" />
                      <h1 className=' text-[20px] font-semibold text-black mt-9 mb-2.5'>24/7 CUSTOMER SERVICE</h1>
                      <h2 className='text-lg font-normal text-black '>Friendly 24/7 customer support</h2>
                 </div>
 
                 
-                <div>
+                <div className='mt-4 lg:mt-0'>
                     <img src={carlogo2} className=' mx-auto block'  alt="" />
                      <h1 className=' text-[20px] font-semibold text-black mt-9 mb-2.5'>MONEY BACK GUARANTEE</h1>
                      <h2 className='text-lg font-normal text-black '>We reurn money within 30 days</h2>

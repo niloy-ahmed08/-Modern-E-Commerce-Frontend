@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { countDownDateAndTime } from 'countdown-date-time'; 
+import SecHead from './SecHead';
 
 const CountDown = () => {
     const conduct_date = '2026-10-25 16:54:00';
@@ -19,20 +20,20 @@ const CountDown = () => {
 
 
     return (
-        <div className='pb-10'>
-            <div className="container mx-auto">
+        <div className=' pb=2 lg:pb-10'>
+            <div className="container mx-auto px-3 lg:px-0">
 
-                <div className='flex gap-2 items-center'>
-                    <div className='border bg-red-500 w-5 h-10'>
+               
+        <SecHead
 
-                    </div>
-                    <h1>Today's</h1>
-                </div>
+          headtitles='Categories'
+          headtitletexttwo='Flash Sales'
+        />
 
-                <div className='flex gap-15 mt-9'>
-                    <h1 className='text-2xl'>Flash Sales</h1>
+                <div className='flex lg:flex-row flex-col gap-15 mt-4 lg:mt-9'>
+                    
 
-                  <div className='flex gap-12 items-center'>
+                  <div className='flex  gap-5 lg:gap-12 items-center'>
                     <div>
                     <h2>Days</h2>
                     <h1 className=' font-bold text-xl text-black'>{count.days}</h1>

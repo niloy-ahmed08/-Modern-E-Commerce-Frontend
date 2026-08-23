@@ -31,7 +31,7 @@ const CataGories = () => {
     const { className, style, onClick } = props;
     return (
       <div
-        className=' cursor-pointer absolute h-11.5 w-11.5 rounded-full bg-[#F5F5F5] flex items-center justify-center absolute -top-10 right-15 '
+        className=' cursor-pointer hidden h-11.5 w-11.5 rounded-full bg-[#F5F5F5] lg:flex items-center justify-center absolute -top-10 right-15 '
         // style={{ ...style, display: "block", background: "red" }}
         onClick={onClick}
       >
@@ -45,7 +45,7 @@ const CataGories = () => {
     const { className, style, onClick } = props;
     return (
       <div
-        className='cursor-pointer absolute h-11.5 w-11.5 rounded-full flex items-center justify-center bg-[#F5F5F5]  -top-10 right-31'
+        className='cursor-pointer absolute h-11.5 w-11.5 rounded-full hidden lg:flex items-center justify-center bg-[#F5F5F5]  -top-10 right-31'
         onClick={onClick}
       >
         <FaArrowLeftLong className=' ' />
@@ -65,12 +65,42 @@ const CataGories = () => {
     arrows: true,
 
     nextArrow: <SampleNextArrow />,
-    prevArrow: <SamplePrevArrow />
+    prevArrow: <SamplePrevArrow />,
+
+
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2
+        }
+      },
+      {
+        breakpoint: 570,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
+
+
   };
 
 
   return (
-    <div className='py-30'>
+    <div className=' py-5 lg:py-30'>
       <Container>
 
         <SecHead
@@ -85,7 +115,7 @@ const CataGories = () => {
 
 
 
-        <div className=' border-b pb-25 mt-10'>
+        <div className=' border-b pb-10 lg:pb-25 mt-2.5 lg:mt-10'>
 
 
           <Slider {...settings}>

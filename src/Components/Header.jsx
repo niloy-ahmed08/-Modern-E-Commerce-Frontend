@@ -6,11 +6,11 @@ const Header = () => {
   return (
     <div className='bg-black py-3 '>
 
-      <div className='container'>
+      <div className='container lg:px-0 px-3'>
 
         <div className=' flex justify-between text-white'>
           <div></div>
-          <p className='text-sm '>Summer Sale For All Swim Suits And Free Express
+          <p className=' text-xs lg:text-sm '>Summer Sale For All Swim Suits And Free Express
              Delivery - OFF 50%! <span className='border-b-2 ml-3  '>
               
           <NavLink to="/navitgateshopNow" end>

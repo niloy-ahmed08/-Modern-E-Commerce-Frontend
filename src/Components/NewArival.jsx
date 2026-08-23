@@ -10,7 +10,7 @@ const NewArival = () => {
         <div className='py-15'>
             <Container>
                 <div>
-                    <div className='flex gap-7.5'>
+                    <div className='flex lg:flex-row flex-col gap-7.5'>
                         <div className=' relative'>
                             <img src={gamingbigs} alt="" />
                             <div className=' absolute top-0 left-0 pt-111.75 pb-18 pr-69.25 pl-8'>
@@ -28,8 +28,8 @@ const NewArival = () => {
                                     <h2 className='text-lg font-medium border-b inline-block'>Shop Now</h2>
                                 </div>
                             </div>
-                            <div className='flex gap-7.5 mt-8'>
-                                <div className=' relative'>
+                            <div className='flex lg:flex-row flex-col gap-7.5 mt-8'>
+                                <div className=' relative lg:mx-0 mx-auto'>
                                 <img src={amazonitems} alt="" />
                                 <div className='text-white absolute top-0 left-0 pl-6 '>
                                     <h1 className='text-2xl font-semibold mt-[165px]  '>Speakers</h1>
@@ -37,7 +37,7 @@ const NewArival = () => {
                                     <h2 className='text-lg font-medium border-b mt-2 inline-block'>Shop Now</h2>
                                 </div>
                                 </div>
-                                <div className=' relative'>
+                                <div className=' relative lg:mx-0 mx-auto'>
                                 <img src={gucciya} alt="" />
                                  <div className='text-white absolute top-0 left-0 pl-6 '>
                                     <h1 className='text-2xl font-semibold mt-[165px]  '>Perfume</h1>

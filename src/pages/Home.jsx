@@ -10,7 +10,7 @@ import NewArival from '../Components/NewArival'
 import LoginExclusive from '../Components/LoginExclusive'
 import SingUp from '../Components/SingUp'
 import CustomerService from '../Components/CustomerService'
-import Shop from './Shop'
+// import Shop from './Shop'
 import SounBox from '../Components/SounBox'
 
 
@@ -21,7 +21,7 @@ const Home = () => {
     <div>
        
         <Banner/>
-         <Shop/>
+         {/* <Shop/> */}
         <CountDown/>
          <ProductCard/>
          <CataGories/>
