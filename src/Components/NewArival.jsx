@@ -7,25 +7,25 @@ import amazonitems from '../assets/amazonitem.png'
 
 const NewArival = () => {
     return (
-        <div className='py-15'>
+        <div className=' py-7 lg:py-15'>
             <Container>
                 <div>
                     <div className='flex lg:flex-row flex-col gap-7.5'>
                         <div className=' relative'>
                             <img src={gamingbigs} alt="" />
-                            <div className=' absolute top-0 left-0 pt-111.75 pb-18 pr-69.25 pl-8'>
-                                <h1 className='text-2xl font-semibold text-white'>PlayStation 5</h1>
+                            <div className=' absolute top-0 left-0 pt-40 lg:pt-111.75 pb-0 lg:pb-18 pr-69.25 pl-8'>
+                                <h1 className='lg:text-2xl text-xl font-semibold text-white'>PlayStation 5</h1>
                                 <p className='text-sm font-medium text-white mt-4'>Black and White version of the PS5 coming out on sale.</p>
-                                <h2 className='text-[16px] mt-4 font-medium text-white border-b  inline-block'>Shop Now</h2>
+                                <h2 className='text-[16px] mt-2 lg:mt-4 font-medium text-white border-b  inline-block'>Shop Now</h2>
                             </div>
                         </div>
                         <div>
                             <div className=' relative'>
                                 <img src={ladycaps} alt="" />
-                                <div className=' absolute top-0 left-0 pt-[118px] pl-6 text-white pb-6 pr-[291px]'>
-                                    <h1 className='text-2xl font-semibold mt-4 mb-4'>Women’s Collections</h1>
-                                    <p className='text-sm font-medium mb-4'>Featured woman collections that give you another vibe.</p>
-                                    <h2 className='text-lg font-medium border-b inline-block'>Shop Now</h2>
+                                <div className=' absolute top-0 left-0 pt-3 lg:pt-30 pl-6 text-white lg:pb-0 pb-10 pr-72.75'>
+                                    <h1 className='text-2xl font-semibold lg:mt-4 mt-2 lg:mb-4 mb-1 '>Women’s Collections</h1>
+                                    <p className='text-sm font-medium mb-0 lg:mb-4'>Featured woman collections that give you another vibe.</p>
+                                    <h2 className='text-lg font-medium border-b  inline-block'>Shop Now</h2>
                                 </div>
                             </div>
                             <div className='flex lg:flex-row flex-col gap-7.5 mt-8'>

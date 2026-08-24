@@ -9,15 +9,15 @@ import { CiTwitter } from "react-icons/ci";
 import { FaFacebook } from "react-icons/fa";
 const Footer = () => {
   return (
-    <div className='bg-black py-20'>
+    <div className='bg-black py-10 lg:py-20'>
 
-      <div className='container mx-auto'>
+      <div className='container mx-auto px-3 lg:px-0'>
 
-        <div className='flex  text-white justify-between'>
+        <div className='flex lg:flex-row flex-col  items-center text-center lg:items-start lg:text-left space-y-9 lg:space-y-0  text-white lg:justify-between'>
 
           <div>
             <h1 className='text-[20px]'>Exclusive</h1>
-            <div className='mt-6 space-y-4 text-[16px]'>
+            <div className=' mt-3 lg:mt-6 space-y-2 lg:space-y-4 text-[16px]'>
               <h3>Get 10% off your first order</h3>
               <h2>Subscribe</h2>
               <div className='py-3 w-54.25 pl-2 border border-white mt-4 relative'>
@@ -30,7 +30,7 @@ const Footer = () => {
 
           <div>
             <h1 className='text-[20px]'>Support</h1>
-            <ul className=' space-y-4 mt-6 text-[16px]'>
+            <ul className='space-y-2  lg:space-y-4 mt-3 lg:mt-6 text-[16px]'>
               <li>111 Bijoy sarani, Dhaka,
                 <span className='block'>
                   DH 1515, Bangladesh.
@@ -44,7 +44,7 @@ const Footer = () => {
 
           <div>
             <h1 className='text-[20px]'>Account</h1>
-            <ul className='space-y-4 mt-6 text-[16px]'>
+            <ul className='space-y-2  lg:space-y-4 mt-3 lg:mt-6 text-[16px]'>
               <li>My Account</li>
               <li>Login / Register</li>
               <li>Cart</li>
@@ -56,7 +56,7 @@ const Footer = () => {
 
           <div>
             <h1 className='text-[20px]'>Quick Link</h1>
-            <ul className='space-y-4 mt-6 text-[16px]'>
+            <ul className='space-y-2  lg:space-y-4 mt-3 lg:mt-6 text-[16px]'>
               <li>Privacy Policy</li>
               <li>Terms Of Use</li>
               <li>FAQ</li>
@@ -64,11 +64,11 @@ const Footer = () => {
             </ul>
           </div>
 
-          <div>
+          <div className='pl-15 lg:pl-0'>
             <h1 className='text-[20px]'>Download App</h1>
-            <div className='mt-6 text-[16px]'>
+            <div className='mt-2 lg:mt-6 text-[16px]'>
               <h1>Save $3 with App New User Only</h1>
-              <div className='flex gap-4 mt-4'>
+              <div className='flex gap-4 mt-2 lg:mt-4'>
                 <div>
                   <img src={quarcode} alt="" />
                 </div>

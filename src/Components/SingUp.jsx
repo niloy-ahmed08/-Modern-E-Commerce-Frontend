@@ -130,7 +130,7 @@ transition: Bounce,
         if (email == "") {
             setemailerror("plese your email or number")
             notifyemailnumber()
-        } else if (!emailregex.test(email) && !passwordregex.test(email)) {
+        } else if (!emailregex.test(email) && !numbersregex.test(email)) {
             setemailerror('plese enter valid email or number')
             regexemailnmbernotify()
             haserror = true;
@@ -169,18 +169,18 @@ transition: Bounce,
         <>
 
             {/* <ToastContainer /> */}
-            <div className='py-30'>
+            <div className='py-7 lg:py-30'>
                 <Container>
 
-                    <div className=' flex items-center gap-15'>
+                    <div className=' flex items-center gap-5 lg:gap-15'>
 
-                        <div>
+                        <div className=''>
                             <img src={imglogin} alt="" />
                         </div>
-                        <div>
+                        <div className=''>
 
-                            <h1 className='text-2xl font-semibold text-black mb-6'>Create an account</h1>
-                            <p className='text-sm font-medium text-black mb-12'>Enter your details below</p>
+                            <h1 className='text-xl lg:text-2xl font-semibold text-black mb-3 lg:mb-6'>Create an account</h1>
+                            <p className='text-sm font-medium text-black mb-6 lg:mb-12'>Enter your details below</p>
 
                             <div className=' border-b-2 border-gray-400 mb-12'>
                                 <input onFocus={() => setnameerror("")} value={name} onChange={(e) => setname(e.target.value)} type="email" placeholder='Name' className=' outline-none' />
@@ -203,7 +203,7 @@ transition: Bounce,
 
                                  
                             </div>
-                            <button onClick={singuphandale} className=' cursor-pointer py-4 px-30 bg-primary text-white text-sm font-medium mt-10'>Create Accaunt</button>
+                            <button onClick={singuphandale} className=' cursor-pointer py-4 px-10 lg:px-30 rounded-sm bg-primary text-white text-sm font-medium mt-10'>Create Accaunt</button>
                         </div>
 
                     </div>

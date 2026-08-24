@@ -5,7 +5,7 @@ import carlogo2 from '../assets/money.png'
  import carlogo3 from '../assets/headset.png'
 const CustomerService = () => {
   return (
-    <div className=' py-15 '>
+    <div className=' py-7 lg:py-15 '>
         <Container>
 
             <div className='flex lg:flex-row flex-col  justify-between items-center'>

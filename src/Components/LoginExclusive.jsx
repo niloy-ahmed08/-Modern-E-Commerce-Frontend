@@ -166,20 +166,20 @@ transition: Bounce,
           }
         }}
       /> */}
-      <div className='py-30'>
+      <div className=' py-7 lg:py-30'>
         <Container>
 
-          <div className=' flex gap-32.5 items-center'>
+          <div className=' flex  gap-6 lg:gap-32.5 items-center'>
 
-            <div>
+            <div className=''>
               <img src={imglogin} alt="" />
             </div>
 
             <div>
 
-              <h1 className='text-2xl font-semibold text-black mt-[0px]'>Log in to Exclusive</h1>
-              <p className='text-sm font-medium text-gray-400 mt-4'>Enter your details below</p>
-              <div className='border-b-2 mt-12 border-gray-400 '>
+              <h1 className='lg:text-2xl text-xl font-semibold text-black mt-1 lg:mt-2.5'>Log in to Exclusive</h1>
+              <p className='text-sm font-medium text-gray-400 mt-2 lg:mt-4'>Enter your details below</p>
+              <div className='border-b-2 mt-6 lg:mt-12 border-gray-400 '>
                 <input value={email} className=' outline-none' onFocus={() => setemailerror('')} onChange={(e) => setemail(e.target.value)} type="text" placeholder='Email or phone number' />
                 <p className='text-sm font-medium text-primary'> {emailerror} </p>
               </div>

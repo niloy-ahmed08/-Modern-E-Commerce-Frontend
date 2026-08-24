@@ -153,7 +153,9 @@ const CustmPcard = ({ parsents, imgsrc, produtname, ratemathmathics, price, disc
                 {/* <ToastContainer/> */}
                 <div className=' relative bg-[#F5F5F5] pt-11 pl-0  overflow-hidden h-62.5'>
                     <span  className=' absolute top-3 left-3   py-2 px-3 text-xs  rounded-sm bg-primary text-white'>-{parsents}%</span>
-                    <img onClick={productdettels} src={imgsrc} alt="" className=' mx-auto ' />
+                     <div className='w-full h-50 bg-[#F5F5F5] flex items-center justify-center rounded-md overflow-hidden'>
+                    <img onClick={productdettels} src={imgsrc} alt="" className=' max-h-full mx-auto ' />
+                     </div>
                     <div className=' absolute top-3 right-3  space-y-2'>
                         <div onClick={handaletoheart} className='  cursor-pointer bg-white w-8.5 h-8.5 rounded-full flex items-center justify-center'>
                         {

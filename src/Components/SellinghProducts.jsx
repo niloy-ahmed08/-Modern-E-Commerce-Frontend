@@ -21,10 +21,10 @@ const SellinghProducts = () => {
 
 
       return (
-            <div className='pb-15'>
+            <div className=' pb-6 lg:pb-15'>
                   <Container>
 
-                        <div className='flex lg:flex-row flex-col  lg:justify-between items-center'>
+                        <div className='flex lg:flex-row flex-col lg:items-stretch gap-6  justify-between items-center'>
                               <SecHead
                                     headtitles='This Month'
                                     headtitletexttwo='Best Selling Products'
@@ -102,7 +102,7 @@ const SellinghProducts = () => {
                                     <div className=''>
                                           <CustmPcard
 
-                                                imgsrc={chaiars}
+                                                imgsrc={remotes}
                                                 produtname='The north coat'
                                                 price='230'
                                                 discauntprice='330'
@@ -115,7 +115,7 @@ const SellinghProducts = () => {
                                     <div className=''>
                                           <CustmPcard
 
-                                                imgsrc={keyboards}
+                                                imgsrc={jbl}
                                                 produtname='The north coat'
                                                 price='230'
                                                 discauntprice='330'
@@ -144,7 +144,7 @@ const SellinghProducts = () => {
                                     <div className=''>
                                           <CustmPcard
 
-                                                imgsrc={jbl}
+                                                imgsrc={baghslady}
                                                 produtname='The north coat'
                                                 price='230'
                                                 discauntprice='330'
@@ -157,7 +157,7 @@ const SellinghProducts = () => {
                                     <div className=''>
                                           <CustmPcard
 
-                                                imgsrc={remotes}
+                                                imgsrc={tables}
                                                 produtname='The north coat'
                                                 price='230'
                                                 discauntprice='330'
