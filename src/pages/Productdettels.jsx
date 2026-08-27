@@ -30,7 +30,6 @@ const Productdettels = () => {
             
         }
 
-        console.log(product)
            
 
 

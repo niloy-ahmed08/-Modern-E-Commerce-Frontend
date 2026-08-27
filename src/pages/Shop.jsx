@@ -33,6 +33,7 @@ const Shop = () => {
                setloading(false)
                setproducts(data.data.products)
               }
+ 
 
 
                  useEffect(()=>{
@@ -70,7 +71,7 @@ const Shop = () => {
                     <BreadCump />
                 </div>
 
-                <div className='flex justify-between items-center mt-12.5'>
+                <div className='flex justify-between   items-center mt-12.5'>
                     <h1>Shop by Category</h1>
                     <div className='flex gap-2 items-center'>
                         <h1 className='text-lg font-bold'>Show :</h1>
@@ -84,11 +85,11 @@ const Shop = () => {
                     </div>
                 </div>
 
-                <div className='flex flex-col lg:flex-row gap-6 lg:gap-8'>
+                <div className='flex   gap-8'>
 
-                    <div className='w-full lg:w-[22%] xl:w-[20%] pr-0 lg:pr-5'>
+                    <div className='w-full lg:w-[22%] xl:w-[20%] text-center pr-0 lg:pr-5'>
 
-                        <ul className='py-20 space-y-4'>
+                        <ul className='lg:py-20 py-7 space-y-4'>
 
                            <h1 onClick={()=>(Dispatch(SetReducer((products))))}  className='text-lg font-semibold cursor-pointer text-black'>All Products</h1>
 
@@ -110,7 +111,7 @@ const Shop = () => {
                        {
 
                         loading ?
-                        <div className='flex flex-wrap gap-10'>
+                        <div className='flex flex-col lg:flex-wrap gap-4 lg:gap-10'>
                         <Skilietoon/>
                         <Skilietoon/>
                         <Skilietoon/>

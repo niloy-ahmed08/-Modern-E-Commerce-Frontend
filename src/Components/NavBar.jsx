@@ -39,7 +39,7 @@ const NavBar = () => {
 
         <div className={` ${show ? 'left-0' : '-left-full'} z-10 absolute lg:static  duration-300 ease-linear   lg:h-auto  -left-100 top-20 flex space-y-5   flex-col lg:flex-row justify-center lg:justify-between items-center lg:bg-transparent   bg-amber-300 lg:text-black w-[80%] lg:w-[80%]  `}>
 
-           <ul className=' lg:flex-row flex-col text-black flex gap-y-5 gap-x-12 items-center  text-[16px] font-normal '>
+           <ul className=' pl-0 lg:pl-14 lg:flex-row flex-col text-black flex gap-y-5 gap-x-12 items-center  text-[16px] font-normal '>
             <li className='cursor-pointer'>
 
           <NavLink to="/navitgatehome" end>
@@ -78,7 +78,8 @@ const NavBar = () => {
               </div>
               <div onClick={()=>navigate('/cartdettels')}  className=' relative'>
               <CiShoppingCart  className='text-[32px]'/>
-              <div className=' absolute -top-2 -right-2 size-6 rounded-full bg-primary text-white text-xs flex items-center justify-center'> {selector.length}
+              <div className=' absolute -top-2 -right-2 size-6 rounded-full bg-primary text-white 
+              text-xs flex items-center justify-center'> {selector.length}
               </div>
               </div>
 

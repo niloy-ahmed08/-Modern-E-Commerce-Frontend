@@ -39,6 +39,33 @@ export const ProductSlice = createSlice({
     },
 
 
+         incrementReducer : (state,action) => {
+      
+          state.cart = state.cart.map((item)=>{
+
+            return action.payload === item.id ? {...item , quan : item.quan + 1} : item
+
+          })
+            
+             localStorage.setItem('CartKey',JSON.stringify(state.cart))
+           
+    },
+
+
+             decrementReducer : (state,action) => {
+      
+                 state.cart = state.cart.map((item)=>{
+
+                  return action.payload === item.id ? {...item , quan : item.quan > 1 ? item.quan -1 : 1}:item
+
+                 })
+            
+             localStorage.setItem('CartKey',JSON.stringify(state.cart))
+           
+    },
+
+
+
     heartReducer : (state,action)=>{
              let heartaxits = state.heart.find((item)=>item.id ==  action.payload.id)
              if (!heartaxits) {
@@ -54,7 +81,7 @@ export const ProductSlice = createSlice({
       
       state.heart = state.heart.filter((item)=>item.id !== action.payload)
             
-             localStorage.setItem('CartKey',JSON.stringify(state.heart))
+             localStorage.setItem('heartkey',JSON.stringify(state.heart))
            
     },
 
@@ -66,6 +93,6 @@ export const ProductSlice = createSlice({
 })
 
 // Action creators are generated for each case reducer function
-export const { SetReducer,CartReducer,removeReducer,heartReducer,wishremoveReducer} = ProductSlice.actions
+export const { SetReducer,CartReducer,removeReducer,heartReducer,wishremoveReducer,incrementReducer,decrementReducer} = ProductSlice.actions
 
 export default ProductSlice.reducer

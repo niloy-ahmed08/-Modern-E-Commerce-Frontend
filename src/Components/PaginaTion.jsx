@@ -18,7 +18,7 @@ const PaginaTion = ({ itemsPerPage}) => {
   function Items({ currentItems }) {
     return (
       <>
-        <div className='flex flex-wrap  gap-y-10 gap-x-5 mt-12 '>
+        <div className='flex flex-wrap  gap-y-10 gap-x-10 mt-12 '>
 
 
           {currentItems &&

@@ -2,13 +2,13 @@ import React from 'react'
 import { FaAngleDown, FaAngleUp } from "react-icons/fa6";
 import { FiChevronUp } from "react-icons/fi";
 import { useDispatch } from 'react-redux';
-import { removeReducer } from '../Slice/ProductSlice';
+import { decrementReducer, incrementReducer, removeReducer } from '../Slice/ProductSlice';
 import { toast, Bounce, Slide } from 'react-toastify';
 
 
 
 
-const CartDettels = ({ imgsrc, title, price, subtototal, id }) => {
+const CartDettels = ({ imgsrc, title, price, subtototal, id,quan }) => {
 
 
 
@@ -41,9 +41,23 @@ transition: Bounce,
 
     notifycart()
 
-
-
   };
+
+     const  Dispatch = useDispatch() 
+
+      const handaleincrement = ()=> {
+
+         Dispatch(incrementReducer(id))
+
+      }
+
+        const dispatchdecrement = useDispatch()
+
+      const handaledecrement = ()=>{
+
+       dispatchdecrement(decrementReducer(id))
+
+      }
 
 
   return (
@@ -68,12 +82,12 @@ transition: Bounce,
           </div>
 
           <div className='w-[34%]'>
-            <div className='border px-3 py-2 rounded-sm flex items-center gap-2 w-18  '>
+            <div className='border px-3 py-2 rounded-sm flex items-center gap-3 w-18  '>
 
-              <p>0</p>
+              <p>{quan}</p>
               <div>
-                <FaAngleUp />
-                <FaAngleDown />
+                <FaAngleUp className=' cursor-pointer' onClick={handaleincrement} />
+                <FaAngleDown className=' cursor-pointer' onClick={handaledecrement} />
 
               </div>
 
