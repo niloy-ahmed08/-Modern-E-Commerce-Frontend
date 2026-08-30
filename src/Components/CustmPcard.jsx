@@ -4,7 +4,7 @@ import { LuEye } from "react-icons/lu";
 import { CiHeart } from "react-icons/ci";
 import { useNavigate } from 'react-router';
 import { useDispatch, useSelector } from 'react-redux';
-import { CartReducer, heartReducer } from '../Slice/ProductSlice';
+import { CartReducer, heartReducer, subtoalReducer } from '../Slice/ProductSlice';
 import { toast, Slide,  } from 'react-toastify';
 import { FaHeart } from "react-icons/fa6";
 
@@ -112,7 +112,7 @@ const CustmPcard = ({ parsents, imgsrc, produtname, ratemathmathics, price, disc
 
            matchitem ? notify(true) :(
             
-               Dispatch(CartReducer({...productDettels, quan : 1})),
+               Dispatch(CartReducer({...productDettels, quan : 1})),Dispatch(subtoalReducer()),
 
                notify(false)
            )   

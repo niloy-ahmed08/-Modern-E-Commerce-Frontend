@@ -13,6 +13,10 @@ const Cart = () => {
 
 
        const datacart = useSelector(state => state.products.cart)
+       
+    const subtotals = useSelector(state => state.products.subtotal)
+
+    console.log(subtotals)
   
        
 
@@ -62,6 +66,42 @@ const Cart = () => {
                
               
                   )}
+
+
+                  <div className='flex justify-between item-center pt-10'>
+              <div className='flex items-baseline gap-4'>
+                <input 
+                  type="text" 
+                  placeholder='Coupon Code' 
+                  className='border pl-6 pr-30 py-4 text-xl outline-none rounded-md' 
+                />
+                <button className='bg-primary text-white px-12 py-4 rounded-md cursor-pointer'>
+                  Apply Coupon
+                </button>
+              </div>
+
+              <div className='border-2 px-6 py-8 w-117.5 rounded-md'>
+                <h3 className='text-[24px] font-medium pb-3'>Cart Total</h3>
+                <div className='flex justify-between items-center pt-3 pb-3 border-b-2 border-gray-400'>
+                  <span className='text-[18px]'>Subtotal:</span>
+                  <span className='text-[18px]'>${subtotals.toFixed(2)}</span>
+                </div>
+                <div className='flex justify-between items-center pt-3 pb-3 border-b-2 border-gray-400'>
+                  <span className='text-[18px]'>Shipping:</span>
+                  <span className='text-[18px]'>Free</span>
+                </div>
+                <div className='flex justify-between items-center pt-3 pb-3'>
+                  <span className='text-[18px]'>Total:</span>
+                  <span className='text-[18px]'>${subtotals.toFixed(2)}</span>
+                </div>
+                <button className='flex items-center justify-center mx-auto mt-10 px-12 py-4 bg-primary rounded-sm text-white cursor-pointer'>
+                  Process to checkout
+                </button>
+              </div>
+            </div>
+          
+        
+
 
 
             </div>

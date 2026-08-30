@@ -2,7 +2,7 @@ import React from 'react'
 import { FaAngleDown, FaAngleUp } from "react-icons/fa6";
 import { FiChevronUp } from "react-icons/fi";
 import { useDispatch } from 'react-redux';
-import { decrementReducer, incrementReducer, removeReducer } from '../Slice/ProductSlice';
+import { decrementReducer, incrementReducer, removeReducer, subtoalReducer } from '../Slice/ProductSlice';
 import { toast, Bounce, Slide } from 'react-toastify';
 
 
@@ -37,7 +37,7 @@ transition: Bounce,
   const handaletodellate = () => {
 
 
-    dispatch(removeReducer(id));
+    dispatch(removeReducer(id)),dispatch(subtoalReducer());
 
     notifycart()
 
@@ -47,7 +47,7 @@ transition: Bounce,
 
       const handaleincrement = ()=> {
 
-         Dispatch(incrementReducer(id))
+         Dispatch(incrementReducer(id)),Dispatch(subtoalReducer())
 
       }
 
@@ -55,7 +55,7 @@ transition: Bounce,
 
       const handaledecrement = ()=>{
 
-       dispatchdecrement(decrementReducer(id))
+       dispatchdecrement(decrementReducer(id)),dispatchdecrement(subtoalReducer())
 
       }
 
