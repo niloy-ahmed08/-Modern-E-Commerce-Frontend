@@ -1,11 +1,13 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { IoIosSearch } from "react-icons/io";
 import { FaRegHeart } from "react-icons/fa6";
 import navlogos from '../assets/Navlogo.png'
 import { CiShoppingCart } from "react-icons/ci";
 import { NavLink, useNavigate } from "react-router";
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { FaBarsStaggered } from "react-icons/fa6";
+import axios from 'axios';
+import { clearsearch } from '../Slice/ProductSlice';
 
 
 const NavBar = () => {
@@ -15,7 +17,9 @@ const NavBar = () => {
         const selector = useSelector(state=>state.products.cart)
 
         const dataheart = useSelector(state=>state.products.heart)
-      
+
+
+        // const Alldata = useSelector(state=>state.products.value)
 
        
 
@@ -25,6 +29,66 @@ const NavBar = () => {
 
 
     const [show ,setshow]=useState(false)
+
+     const [search,setsearch]=useState('')
+     const [filteritem,setfilteritem]=useState([]) 
+     
+
+      const handalesearch = (e)=>{
+
+         let value  = e.target.value;
+         setsearch(value)
+         if (value === '') {
+          setfilteritem([])
+          
+         }else{
+
+           const filterdata =  data.filter((item)=>item.title.toLowerCase().includes(value.toLowerCase()))
+           setfilteritem(filterdata)
+         }   
+      }
+
+
+
+
+      
+    const [products,setproducts]=useState([])
+    const [loading,setloading]=useState(true)
+
+
+      
+     const Dispatch = useDispatch()
+     
+         const data = useSelector(state => state.products.value)
+
+              const Allproducts = async ()=>{
+               let data = await  axios.get('https://dummyjson.com/products')
+               Dispatch(SetReducer(data.data.products))
+               setloading(false)
+               setproducts(data.data.products)
+              }
+ 
+
+
+                 useEffect(()=>{
+                    Allproducts()
+                 },[])
+
+
+                 const handaleseacrhdettels = (item)=>{
+
+                  if (item && item.id) {
+                    Dispatch(clearsearch());
+                    navigate(`/productdettels/${item.id}`)
+                    
+                  }else{
+                    setfilteritem([])
+                  }
+
+                 }
+
+           
+
 
 
   return (
@@ -65,8 +129,17 @@ const NavBar = () => {
            </ul>
            <div className=' lg:flex-row flex-col text-black  gap-y-5 gap-x-12 flex justify-between items-center gap-7.5 cursor-pointer'>
             <div className=' relative pl-5 py-1.5 pr-3 bg-[#82828218]'>
-           <input type="text" className='pr-17.5 cursor-pointer outline-none border border-gray-300' placeholder='What are you looking for? ' />
+           <input value={search} onChange={handalesearch} type="text" className='pr-17.5 cursor-pointer outline-none border border-gray-300' placeholder='What are you looking for? ' />
              <IoIosSearch className=' absolute top-1 right-3 text-[30px]'/>
+
+             <ul className='w-full bg-white text-black top-6   absolute'>
+              {
+                filteritem.map((item)=>{
+                  
+                  return <li key={item.id} onClick={ ()=> handaleseacrhdettels (item) } className=' border  p-4 flex items-center gap-5'>{(item.title).slice(1,17)} <img className='w-13 h-13 ' src={item.thumbnail} alt="" /> </li>
+                })
+              }
+             </ul>
              
             </div>
 
