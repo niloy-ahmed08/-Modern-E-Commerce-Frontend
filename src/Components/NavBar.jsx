@@ -15,6 +15,7 @@ const NavBar = () => {
 
  
         const selector = useSelector(state=>state.products.cart)
+        console.log(selector)
 
         const dataheart = useSelector(state=>state.products.heart)
 

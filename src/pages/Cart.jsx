@@ -12,11 +12,11 @@ const Cart = () => {
      
 
 
-       const datacart = useSelector(state => state.products.cart)
+       const datacart = useSelector(state => state.products.cart ?? [])
        
-    const subtotals = useSelector(state => state.products.subtotal)
+    const subtotals = useSelector(state => Number(state.products.subtotal ?? 0))
 
-    console.log(subtotals)
+    
   
        
 
@@ -56,7 +56,7 @@ const Cart = () => {
                                imgsrc={item.images}
                                title={item.title}
                                price={item.price}
-                               subtototal={((item.price)*(item.quan)).toFixed(2)}
+                               subtototal={((item.price)*(item.quan))}
                                
                          />
                         })

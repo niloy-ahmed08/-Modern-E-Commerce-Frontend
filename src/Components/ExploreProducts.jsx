@@ -17,8 +17,13 @@ import SlickSlider from "react-slick";
 const Slider = SlickSlider.default || SlickSlider;
 import { FaArrowRightLong } from "react-icons/fa6";
 import { FaArrowLeftLong } from "react-icons/fa6";
+import { useSelector } from 'react-redux'
 
 const ExploreProducts = () => {
+
+
+
+
 
 
   

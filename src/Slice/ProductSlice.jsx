@@ -1,13 +1,18 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { jsx } from 'react/jsx-runtime'
 
+const safeNumber = (value, fallback = 0) => {
+  const parsedValue = Number(value);
+  return Number.isFinite(parsedValue) ? parsedValue : fallback;
+};
+
 export const ProductSlice = createSlice({
   name: 'counter',
   initialState: {
     value: [],
     cart :localStorage.getItem('CartKey') ? JSON.parse(localStorage.getItem('CartKey')):[],
     heart : localStorage.getItem('heartkey') ? JSON.parse(localStorage.getItem('heartkey')):[],
-    subtotal : localStorage.getItem('Subtotal') ? JSON.parse(localStorage.getItem('Subtotal')):0,
+    subtotal : safeNumber(localStorage.getItem('Subtotal'), 0),
     filteritems : []
    
    

@@ -27,6 +27,8 @@ const Shop = () => {
      
          const data = useSelector(state => state.products.value)
 
+         
+
               const Allproducts = async ()=>{
                let data = await  axios.get('https://dummyjson.com/products')
                Dispatch(SetReducer(data.data.products))
