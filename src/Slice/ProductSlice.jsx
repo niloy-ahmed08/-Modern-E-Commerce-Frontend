@@ -1,10 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { jsx } from 'react/jsx-runtime'
 
-const safeNumber = (value, fallback = 0) => {
-  const parsedValue = Number(value);
-  return Number.isFinite(parsedValue) ? parsedValue : fallback;
-};
+// const safeNumber = (value, fallback = 0) => {
+//   const parsedValue = Number(value);
+//   return Number.isFinite(parsedValue) ? parsedValue : fallback;
+// };
 
 export const ProductSlice = createSlice({
   name: 'counter',
@@ -12,8 +12,8 @@ export const ProductSlice = createSlice({
     value: [],
     cart :localStorage.getItem('CartKey') ? JSON.parse(localStorage.getItem('CartKey')):[],
     heart : localStorage.getItem('heartkey') ? JSON.parse(localStorage.getItem('heartkey')):[],
-    subtotal : safeNumber(localStorage.getItem('Subtotal'), 0),
-    filteritems : []
+    subtotal : localStorage.getItem('Subtotal') ? JSON.parse(localStorage.getItem('Subtotal')) : 0
+    
    
    
 
@@ -107,11 +107,7 @@ export const ProductSlice = createSlice({
            
     },
 
-        clearsearch : (state) => {
-    
-            state.filteritems = [];           
-           
-    },
+   
 
 
 
@@ -122,6 +118,6 @@ export const ProductSlice = createSlice({
 
 // Action creators are generated for each case reducer function
 export const { SetReducer,CartReducer,removeReducer,heartReducer,wishremoveReducer,
-  incrementReducer,decrementReducer,subtoalReducer,clearsearch} = ProductSlice.actions
+  incrementReducer,decrementReducer,subtoalReducer} = ProductSlice.actions
 
 export default ProductSlice.reducer

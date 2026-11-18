@@ -7,7 +7,7 @@ import { NavLink, useNavigate } from "react-router";
 import { useDispatch, useSelector } from 'react-redux';
 import { FaBarsStaggered } from "react-icons/fa6";
 import axios from 'axios';
-import { clearsearch } from '../Slice/ProductSlice';
+
 
 
 const NavBar = () => {
